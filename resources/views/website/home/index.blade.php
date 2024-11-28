@@ -8,7 +8,7 @@
     <!--Start Slider-->
     <div class="main_slider owl-carousel owl-theme seaction_margin">
         <div class="item">
-            <img src="images/custom/main_slider.jpg" alt="img" />
+            <img src="{{ asset('website/assets/images/custom/main_slider.jpg') }}" alt="img" />
             <div class="slide_content">
                 <div class="container">
                     <div class="row">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="images/custom/main_slider2.jpg" alt="img" />
+            <img src="{{ asset('website/assets/images/custom/main_slider2.jpg') }}" alt="img" />
             <div class="slide_content">
                 <div class="container">
                     <div class="row">
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="images/custom/main_slider3.jpg" alt="img" />
+            <img src="{{ asset('website/assets/images/custom/main_slider3.jpg') }}" alt="img" />
             <div class="slide_content">
                 <div class="container">
                     <div class="row">
@@ -74,11 +74,11 @@
             <div class="row">
                 <div class="col-sm-12 col-md-3">
                     <div class="icon_box animated fades">
-                        <img src="images/icons/top_icon1.png" alt="img" />
+                        <img src="{{ asset('website/assets/images/icons/top_icon1.png') }}" alt="img" />
                         <h4>Cerfified Workers</h4>
                     </div>
                     <div class="icon_box animated fades">
-                        <img src="images/icons/top_icon3.png" alt="img" />
+                        <img src="{{ asset('website/assets/images/icons/top_icon3.png') }}" alt="img" />
                         <h4>Honest & Realiable</h4>
                     </div>
                 </div>
@@ -94,11 +94,11 @@
                 </div>
                 <div class="col-sm-12 col-md-3">
                     <div class="icon_box animated fades">
-                        <img src="images/icons/top_icon2.png" alt="img" />
+                        <img src="{{ asset('website/assets/images/icons/top_icon2.png') }}" alt="img" />
                         <h4>10+ Years Expertise</h4>
                     </div>
                     <div class="icon_box animated fades">
-                        <img src="images/icons/top_icon4.png" alt="img" />
+                        <img src="{{ asset('website/assets/images/icons/top_icon4.png') }}" alt="img" />
                         <h4>24h Free Helpline</h4>
                     </div>
                 </div>
@@ -116,12 +116,12 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon1.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh1.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon1.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh1.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Landscape Caring</h3>
@@ -136,12 +136,12 @@
                 </div>
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon2.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh2.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon2.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh2.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Watering Gardens</h3>
@@ -156,12 +156,12 @@
                 </div>
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon3.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh3.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon3.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh3.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>New Trees Planting</h3>
@@ -176,12 +176,12 @@
                 </div>
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon4.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh4.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon4.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh4.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Rubbbish Cleanup</h3>
@@ -196,12 +196,12 @@
                 </div>
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon5.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh5.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon5.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh5.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Lawn Moving</h3>
@@ -216,12 +216,12 @@
                 </div>
                 <div class="col-sm-12 col-md-6 animated slide">
                     <div class="service">
-                        <img src="images/custom/home_services.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/home_services.jpg') }}" alt="img" />
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="images/icons/icon6.png" class="icon_one" alt="img" />
-                                    <img src="images/icons/iconh6.png" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon6.png') }}" class="icon_one" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh6.png') }}" class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Design & Planning</h3>
@@ -255,54 +255,54 @@
             <ul id="project-eliment" class="row da-thumbs">
                 <li class="col-sm-12 col-md-4 item cleanup lawn_care">
                     <div class="item_inner">
-                        <img src="images/custom/project.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
                 </li>
                 <li class="col-sm-12 col-md-4 item gardening planting">
                     <div class="item_inner">
-                        <img src="images/custom/project2.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project2.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project2.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project2.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
                 </li>
                 <li class="col-sm-12 col-md-4 item cleanup planting">
                     <div class="item_inner">
-                        <img src="images/custom/project3.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project3.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project3.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project3.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
                 </li>
                 <li class="col-sm-12 col-md-4 item cleanup planting">
                     <div class="item_inner">
-                        <img src="images/custom/project4.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project4.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project4.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project4.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
                 </li>
                 <li class="col-sm-12 col-md-4 item cleanup gardening ">
                     <div class="item_inner">
-                        <img src="images/custom/project5.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project5.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project5.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project5.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
                 </li>
                 <li class="col-sm-12 col-md-4 item cleanup planting">
                     <div class="item_inner">
-                        <img src="images/custom/project6.jpg" alt="img" />
+                        <img src="{{ asset('website/assets/images/custom/project6.jpg') }}" alt="img" />
                         <div class="overlay">
-                            <a href="images/custom/project6.jpg" class="zoom"><i class="fa fa-search"></i></a>
+                            <a href="{{ asset('website/assets/images/custom/project6.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
                             <h5><a href="#">Lawn Worker</a></h5>
                         </div>
                     </div>
@@ -379,7 +379,7 @@
                                         cupidatat non proident sunt culpa officia.
                                     </p>
                                     <div class="user_botom">
-                                        <img src="images/user.png" alt="img" />
+                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
                                         <span> Kenn Thomson <cite>Garden Owner</cite></span>
                                     </div>
                                 </div>
@@ -390,7 +390,7 @@
                                         cupidatat non proident sunt culpa officia.
                                     </p>
                                     <div class="user_botom">
-                                        <img src="images/user.png" alt="img" />
+                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
                                         <span> Kenn Thomson <cite>Garden Owner</cite></span>
                                     </div>
                                 </div>
@@ -401,7 +401,7 @@
                                         cupidatat non proident sunt culpa officia.
                                     </p>
                                     <div class="user_botom">
-                                        <img src="images/user.png" alt="img" />
+                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
                                         <span> Kenn Thomson <cite>Garden Owner</cite></span>
                                     </div>
                                 </div>
@@ -410,7 +410,7 @@
                     </div>
                     <div class="col-sm-12 col-md-5">
                         <div class="testi_img">
-                            <img src="images/testi_img.png" alt="img" />
+                            <img src="{{ asset('website/assets/images/testi_img.png') }}" alt="img" />
                         </div>
                     </div>
                 </div>
@@ -431,7 +431,7 @@
                 <div class="col-sm-12 col-md-3 animated slide res_mrg">
                     <div class="tool">
                         <figure>
-                            <a href="#"><img src="images/custom/tool1.png" alt="img" /></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool1.png') }}" alt="img" /></a>
                         </figure>
                         <div class="detail">
                             <h5><a href="#">Electric Mover</a></h5>
@@ -443,7 +443,7 @@
                 <div class="col-sm-12 col-md-3 animated slide res_mrg">
                     <div class="tool">
                         <figure>
-                            <a href="#"><img src="images/custom/tool2.png" alt="img" /></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool2.png') }}" alt="img" /></a>
                         </figure>
                         <div class="detail">
                             <h5><a href="#">Electric Mover</a></h5>
@@ -455,7 +455,7 @@
                 <div class="col-sm-12 col-md-3 animated slide res_mrg">
                     <div class="tool">
                         <figure>
-                            <a href="#"><img src="images/custom/tool3.png" alt="img" /></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool3.png') }}" alt="img" /></a>
                         </figure>
                         <div class="detail">
                             <h5><a href="#">Electric Mover</a></h5>
@@ -467,7 +467,7 @@
                 <div class="col-sm-12 col-md-3 animated slide res_mrg">
                     <div class="tool">
                         <figure>
-                            <a href="#"><img src="images/custom/tool4.png" alt="img" /></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool4.png') }}" alt="img" /></a>
                         </figure>
                         <div class="detail">
                             <h5><a href="#">Electric Mover</a></h5>
@@ -491,7 +491,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
                     <div class="news">
                         <figure>
-                            <a href="#"><img src="images/custom/new1.jpg" alt="img"></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new1.jpg') }}" alt="img"></a>
                             <span class="date">25 <cite>April</cite></span>
                         </figure>
                         <div class="content">
@@ -505,7 +505,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
                     <div class="news">
                         <figure>
-                            <a href="#"><img src="images/custom/new2.jpg" alt="img"></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new2.jpg') }}" alt="img"></a>
                             <span class="date">25 <cite>April</cite></span>
                         </figure>
                         <div class="content">
@@ -519,7 +519,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
                     <div class="news">
                         <figure>
-                            <a href="#"><img src="images/custom/new3.jpg" alt="img"></a>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new3.jpg') }}" alt="img"></a>
                             <span class="date">25 <cite>April</cite></span>
                         </figure>
                         <div class="content">
@@ -534,92 +534,5 @@
         </div>
     </div>
     <!--End News -->
-    <!--Start Call to Action -->
-    <div class="call_action  animated hatch">
-        <div class="action_layer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <h4>liked our services & interested in hiring us?</h4>
-                        <p>
-                            Magna aliqua ut enim minim veniam quis nostrud exercitation ullamco laboris nisi aliquip
-                            <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <a href="contact.html" class="button brdr">get in touch</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End Call to Action -->
-    <!--Start Footer -->
-    <div class="footer_bottom">
-        <div class="footer_inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 animated slide res_mrg">
-                        <div class="footer_widget">
-                            <a href="#"><img src="images/white_logo.png" alt="img"></a>
-                            <p>Adipisicing elit sed do eiusmod tempor incidunt labore et dolore magna aliqua enim minim
-                                ven quis nostu exercitation ullamco.
-                            </p>
-                            <hr>
-                            <p><i class="fa fa-map-marker"></i>Brooks St. 71, Washington DC, USA</p>
-                            <p><i class=" fa fa-phone"></i>Toll Free; +880 192 132 4091</p>
-                            <p><i class="fa fa-envelope"></i>gmzesan7767@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-2 animated slide res_mrg">
-                        <div class="footer_widget">
-                            <h5>Quick Links</h5>
-                            <ul>
-                                <li><a href="index-2.html">Home Page</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="services.html">Our Services</a></li>
-                                <li><a href="project_detail.html">The Projects</a></li>
-                                <li><a href="shop.html">Shop Online</a></li>
-                                <li><a href="blog.html">Our News</a></li>
-                                <li><a href="contact.html">Get in Touch</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3 animated slide">
-                        <div class="footer_widget">
-                            <h5>Working Hours</h5>
-                            <address>
-                                <p><span>We are open 6 Days a week.</span></p>
-                                <p>Monday to Friday : 9 am - 5 pm</p>
-                                <p>Saturday : 10 am - 4 pm</p>
-                                <p>Sunday : By Appointment Only</p>
-                            </address>
-                            <address>
-                                <p>We are also close on Bank </p>
-                                <p>& Calender Holidays.</p>
-                            </address>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3 animated slide">
-                        <div class="footer_widget">
-                            <h5>Contact Us</h5>
-                            <p>Magna aliqua ut enim veniam quis nostrud exercitation sed.
-                            </p>
-                            <div class="news_letter">
-                                <p class="success" id="success"
-                                    style="display:none; color: blue; text-decoration: underline; font-size: 14px;"></p>
-                                <p class="error" id="error"
-                                    style="display:none; color: red; text-decoration: underline; font-size: 14px;"></p>
-                                <form action="http://www.shmai.com/preview/lawnexpress-html/process.php" method="post"
-                                    id="newsletter_form">
-                                    <input type="text" placeholder="Newsletter sign up" name="newletter_email"
-                                        id="newletter_email" />
-                                    <input type="submit" id="subcribe" class="button" value="subscribe now"
-                                        name="subcribe">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 @endsection

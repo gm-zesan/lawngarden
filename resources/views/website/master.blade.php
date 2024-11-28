@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Lawn Garden</title>
+    <title>@yield('title') || Lawn Garden</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 
 <body>
     <div class="page-wrapper">
-        <div class="preloader"></div>
+        {{-- <div class="preloader"></div> --}}
         @include('website.includes.header')
     </div>
     @yield('body')

@@ -28,6 +28,10 @@ class MyCommerceController extends Controller
                             ->get()
         ]);
     }
+
+    public function allProjects(){
+        return view('website.projects.index');
+    }
     
     public function allProducts(Request $request){
         $sortby = $request->input('sortby', 'latest');
@@ -42,6 +46,8 @@ class MyCommerceController extends Controller
         $products = $query->paginate(9);
         return view('website.products.index',['products'=>$products]);
     }
+
+
 
     public function category($id){
         $products = Product::where('category_id',$id)->where('status',1)->orderBy('id','desc')->paginate(9);
