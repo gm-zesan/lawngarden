@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>As Sunnah Products || @yield('title')</title>
+    <title>Lawn Garden || @yield('title')</title>
 
     @include('admin.includes.styles')
     @stack('styles')
@@ -18,7 +18,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">As Sunnah</p>
+            <p class="loader__label">Lawn Garden</p>
         </div>
     </div>
     <div id="main-wrapper">

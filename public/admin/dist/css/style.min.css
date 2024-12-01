@@ -14334,7 +14334,7 @@
     color: #e46a76;
 }
 .skin-blue .topbar {
-    background: #03a9f3;
+    background: #7da500;
 }
 .skin-blue .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
     display: none;
@@ -14345,42 +14345,42 @@
 }
 .skin-blue .sidebar-nav ul li a.active,
 .skin-blue .sidebar-nav ul li a:hover {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue .sidebar-nav ul li a.active i,
 .skin-blue .sidebar-nav ul li a:hover i {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue .sidebar-nav > ul > li.active > a {
-    color: #03a9f3;
-    border-left: 3px solid #03a9f3;
+    color: #7da500;
+    border-left: 3px solid #7da500;
 }
 .skin-blue .sidebar-nav > ul > li.active > a i {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue .page-titles .breadcrumb .breadcrumb-item.active {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue-dark .topbar {
-    background: #03a9f3;
+    background: #7da500;
 }
 .skin-blue-dark .sidebar-nav ul li a.active,
 .skin-blue-dark .sidebar-nav ul li a:hover {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue-dark .sidebar-nav ul li a.active i,
 .skin-blue-dark .sidebar-nav ul li a:hover i {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue-dark .sidebar-nav > ul > li.active > a {
-    color: #03a9f3;
-    border-left: 3px solid #03a9f3;
+    color: #7da500;
+    border-left: 3px solid #7da500;
 }
 .skin-blue-dark .sidebar-nav > ul > li.active > a i {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue-dark .page-titles .breadcrumb .breadcrumb-item.active {
-    color: #03a9f3;
+    color: #7da500;
 }
 .skin-blue-dark .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
     display: none;
@@ -14612,7 +14612,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-    --bs-blue: #03a9f3;
+    --bs-blue: #7da500;
     --bs-indigo: #6610f2;
     --bs-purple: #ab8ce4;
     --bs-pink: #e83e8c;
@@ -14628,7 +14628,7 @@
     --bs-primary: #fb9678;
     --bs-secondary: #f8f9fa;
     --bs-success: #00c292;
-    --bs-info: #03a9f3;
+    --bs-info: #7da500;
     --bs-warning: #fec107;
     --bs-danger: #e46a76;
     --bs-light: #f8f9fa;
@@ -17121,8 +17121,8 @@ fieldset:disabled .btn {
 }
 .btn-info {
     color: #000;
-    background-color: #03a9f3;
-    border-color: #03a9f3;
+    background-color: #7da500;
+    border-color: #7da500;
 }
 .btn-info:hover {
     color: #000;
@@ -17155,8 +17155,8 @@ fieldset:disabled .btn {
 .btn-info.disabled,
 .btn-info:disabled {
     color: #000;
-    background-color: #03a9f3;
-    border-color: #03a9f3;
+    background-color: #7da500;
+    border-color: #7da500;
 }
 .btn-warning {
     color: #000;
@@ -17495,13 +17495,13 @@ fieldset:disabled .btn {
     background-color: transparent;
 }
 .btn-outline-info {
-    color: #03a9f3;
-    border-color: #03a9f3;
+    color: #7da500;
+    border-color: #7da500;
 }
 .btn-outline-info:hover {
     color: #000;
-    background-color: #03a9f3;
-    border-color: #03a9f3;
+    background-color: #7da500;
+    border-color: #7da500;
 }
 .btn-check:focus + .btn-outline-info,
 .btn-outline-info:focus {
@@ -17513,8 +17513,8 @@ fieldset:disabled .btn {
 .btn-outline-info.dropdown-toggle.show,
 .btn-outline-info:active {
     color: #000;
-    background-color: #03a9f3;
-    border-color: #03a9f3;
+    background-color: #7da500;
+    border-color: #7da500;
 }
 .btn-check:active + .btn-outline-info:focus,
 .btn-check:checked + .btn-outline-info:focus,
@@ -17525,7 +17525,7 @@ fieldset:disabled .btn {
 }
 .btn-outline-info.disabled,
 .btn-outline-info:disabled {
-    color: #03a9f3;
+    color: #7da500;
     background-color: transparent;
 }
 .btn-outline-warning {
@@ -20286,7 +20286,7 @@ fieldset:disabled .btn {
     color: #33cea8;
 }
 .link-info {
-    color: #03a9f3;
+    color: #7da500;
 }
 .link-info:focus,
 .link-info:hover {
@@ -20616,7 +20616,7 @@ fieldset:disabled .btn {
     border-color: #00c292 !important;
 }
 .border-info {
-    border-color: #03a9f3 !important;
+    border-color: #7da500 !important;
 }
 .border-warning {
     border-color: #fec107 !important;
@@ -21249,7 +21249,7 @@ fieldset:disabled .btn {
     color: #00c292 !important;
 }
 .text-info {
-    color: #03a9f3 !important;
+    color: #7da500 !important;
 }
 .text-warning {
     color: #fec107 !important;
@@ -21297,7 +21297,7 @@ fieldset:disabled .btn {
     background-color: #00c292 !important;
 }
 .bg-info {
-    background-color: #03a9f3 !important;
+    background-color: #7da500 !important;
 }
 .bg-warning {
     background-color: #fec107 !important;
@@ -34821,7 +34821,7 @@ fieldset:disabled .btn {
     height: 0;
     width: 0;
     box-sizing: border-box;
-    border: 0 solid #1976d2;
+    border: 0 solid #7da500;
     border-radius: 50%;
     -webkit-animation: loader-figure 1.15s infinite
         cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -34841,7 +34841,7 @@ fieldset:disabled .btn {
     font-size: 0.875em;
     letter-spacing: 0.1em;
     line-height: 1.5em;
-    color: #1976d2;
+    color: #7da500;
     white-space: nowrap;
     -webkit-animation: loader-label 1.15s infinite
         cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -35616,7 +35616,7 @@ ul.list-style-none li a:hover {
     background-color: #00c292;
 }
 .label-info {
-    background-color: #03a9f3;
+    background-color: #7da500;
 }
 .label-warning {
     background-color: #fec107;
@@ -36104,7 +36104,7 @@ ul#themecolors li a.working:before {
     background: #e46a76;
 }
 .blue-theme {
-    background: #03a9f3;
+    background: #7da500;
 }
 .purple-theme {
     background: #ab8ce4;
@@ -36190,22 +36190,22 @@ ul#themecolors li a.working:before {
         left,
         #212529 0,
         #212529 23%,
-        #03a9f3 23%,
-        #03a9f3 99%
+        #7da500 23%,
+        #7da500 99%
     );
     background: -webkit-linear-gradient(
         left,
         #212529 0,
         #212529 23%,
-        #03a9f3 23%,
-        #03a9f3 99%
+        #7da500 23%,
+        #7da500 99%
     );
     background: linear-gradient(
         to right,
         #212529 0,
         #212529 23%,
-        #03a9f3 23%,
-        #03a9f3 99%
+        #7da500 23%,
+        #7da500 99%
     );
 }
 .purple-dark-theme {
