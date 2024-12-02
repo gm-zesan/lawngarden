@@ -13,9 +13,7 @@ class Unit extends Model
 
     protected $fillable = [
         'name',
-        'code',
         'description',
-        'status',
     ];
 
 
@@ -23,9 +21,7 @@ class Unit extends Model
     public static function newUnit($request){
         self::$unit = new Unit();
         self::$unit->name = $request->name;
-        self::$unit->code = $request->code;
         self::$unit->description = $request->description;
-        self::$unit->status = $request->status;
         self::$unit->save();
     }
 
@@ -33,9 +29,7 @@ class Unit extends Model
     public static function updatedUnit($request, $id){
         self::$unit = Unit::find($id);
         self::$unit->name = $request->name;
-        self::$unit->code = $request->code;
         self::$unit->description = $request->description;
-        self::$unit->status = $request->status;
         self::$unit->save();
     }
 

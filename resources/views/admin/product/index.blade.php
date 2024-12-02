@@ -129,15 +129,6 @@
                             </div>
                         </div>
 
-                        
-                        <div class="form-group row">
-                            <label for="discount" class="col-sm-3 control-label">Discount (%)</label>
-                            <div class="col-sm-9">
-                                <input type="number" name="discount" class="form-control" step="0.01" min="0" max="100" placeholder="Enter discount percentage">
-                            </div>
-                        </div>
-
-
 
                         <div class="form-group row">
                             <label for="" class="col-sm-3 control-label">Short Description</label>
@@ -156,25 +147,6 @@
                             </div>
                         </div>
 
-                        {{-- islamic_reference --}}
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 control-label">Islamic Reference</label>
-                            <div class="col-sm-9">
-                                <textarea class="form-control summernote" id="" name="islamic_reference"
-                                placeholder="Islamic Reference" rows="5"></textarea>
-                            </div>
-                        </div>
-
-                        {{-- scientific_reference --}}
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 control-label">Scientific Reference</label>
-                            <div class="col-sm-9">
-                                <textarea class="form-control summernote" id="" name="scientific_reference" placeholder="Scientific Reference" rows="5"></textarea>
-                            </div>
-                        </div>
-
-
-
                         <div class="form-group row">
                             <label class="form-label col-sm-3 control-label" for="">Feature Image</label>
                             <div class="col-sm-9">
@@ -182,17 +154,6 @@
                                     accept="image/*" />
                             </div>
                         </div>
-
-
-                        <div class="form-group row">
-                            <label class="form-label col-sm-3 control-label" for="">Other Image</label>
-                            <div class="col-sm-9">
-                                <input type="file" id="input-file-now" class="dropify" name="other_image[]"
-                                    multiple />
-                            </div>
-                        </div>
-
-
 
                         <div class="form-group row">
                             <label for="" class="col-sm-3 control-label">Publication Status</label>
@@ -205,17 +166,6 @@
                                 </label>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="special_offer" class="col-sm-3 control-label">Special Offer Status</label>
-                            <div class="col-sm-9">
-                                <label class="me-3">
-                                    <input type="checkbox" name="special_offer"> Special Offer
-                                </label>
-                            </div>
-                        </div>
-                        
-
 
                         <div class="form-group row m-b-0">
                             <div class="offset-sm-3 col-sm-9">

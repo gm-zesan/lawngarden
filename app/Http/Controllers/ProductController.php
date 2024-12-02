@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\OtherImage;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\Unit;
@@ -23,7 +22,6 @@ class ProductController extends Controller
 
     public function create(Request $request){
         $this->product = Product::newProduct($request);
-        OtherImage::newOtherImage($request->other_image,$this->product->id);
         return back()->with('message','Product info create successfully');
     }
 
@@ -47,16 +45,12 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
         Product::updatedProduct($request,$id);
-        if($request->other_image){
-            OtherImage::updatedOtherImage($request->other_image,$id);
-        }
         return redirect('/product/manage')->with('message','Product info update successfully');
     }
 
 
     public function delete($id){
         Product::deletedProduct($id);
-        OtherImage::deletedOtherImage($id);
         return redirect('/product/manage')->with('message','Product delete successfully');
     }
 

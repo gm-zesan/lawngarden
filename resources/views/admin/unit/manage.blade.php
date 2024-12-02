@@ -20,9 +20,7 @@
                                 <tr>
                                     <th>SL NO</th>
                                     <th>Unit Name</th>
-                                    <th>Unit Code</th>
                                     <th>Unit Description</th>
-                                    <th>Publication Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -31,9 +29,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $unit->name }}</td>
-                                        <td>{{ $unit->code }}</td>
                                         <td>{{ $unit->description }}</td>
-                                        <td>{{ $unit->status == 1 ? 'Published' : 'UnPublished' }}</td>
                                         <td>
                                             <a href="{{ route('unit.edit', ['id' => $unit->id]) }}"
                                                 class="btn btn-success btn-sm">

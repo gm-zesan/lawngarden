@@ -238,79 +238,89 @@
         </div>
     </div>
     <!--End Services-->
-    <!--Start project-->
-    <div class="project_wrap seaction_margin  animated fades">
+    <!--Start News -->
+    <div class="news_wrap seaction_margin">
         <div class="container">
             <div class="heading_wrap">
                 <div class="icon_bar"></div>
-                <h2 class="heading_a">projects <span>Gallery</span></h2>
+                <h2 class="heading_a">Our <span>News blog</span></h2>
             </div>
-            <div class="my-selector" data-option-key="filter">
-                <a href="#filter" data-option-value="*" class="selected">Show All Projects</a>
-                <a href="#filter" data-option-value=".lawn_care">Lawn Care</a>
-                <a href="#filter" data-option-value=".gardening">Gardening</a>
-                <a href="#filter" data-option-value=".cleanup">Rubbish Cleanup</a>
-                <a href="#filter" data-option-value=".planting">Planting</a>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
+                    <div class="news">
+                        <figure>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new1.jpg') }}" alt="img"></a>
+                            <span class="date">25 <cite>April</cite></span>
+                        </figure>
+                        <div class="content">
+                            <h5>clients, case-study</h5>
+                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
+                                    eiusmod temp incididunt</a></h3>
+                            <a href="services.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
+                    <div class="news">
+                        <figure>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new2.jpg') }}" alt="img"></a>
+                            <span class="date">25 <cite>April</cite></span>
+                        </figure>
+                        <div class="content">
+                            <h5>clients, case-study</h5>
+                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
+                                    eiusmod temp incididunt</a></h3>
+                            <a href="services.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
+                    <div class="news">
+                        <figure>
+                            <a href="#"><img src="{{ asset('website/assets/images/custom/new3.jpg') }}" alt="img"></a>
+                            <span class="date">25 <cite>April</cite></span>
+                        </figure>
+                        <div class="content">
+                            <h5>clients, case-study</h5>
+                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
+                                    eiusmod temp incididunt</a></h3>
+                            <a href="services.html">read more</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul id="project-eliment" class="row da-thumbs">
-                <li class="col-sm-12 col-md-4 item cleanup lawn_care">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-4 item gardening planting">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project2.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project2.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-4 item cleanup planting">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project3.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project3.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-4 item cleanup planting">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project4.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project4.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-4 item cleanup gardening ">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project5.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project5.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-sm-12 col-md-4 item cleanup planting">
-                    <div class="item_inner">
-                        <img src="{{ asset('website/assets/images/custom/project6.jpg') }}" alt="img" />
-                        <div class="overlay">
-                            <a href="{{ asset('website/assets/images/custom/project6.jpg') }}" class="zoom"><i class="fa fa-search"></i></a>
-                            <h5><a href="#">Lawn Worker</a></h5>
-                        </div>
-                    </div>
-                </li>
-            </ul>
         </div>
     </div>
-    <!--End project-->
+    <!--End News -->
+    <!--Start Tools -->
+    <div class="tools_wrap seaction_margin">
+        <div class="container">
+            <div class="heading_wrap animated slide">
+                <div class="icon_bar"></div>
+                <h2 class="heading_a">shop <span>lawn tools</span></h2>
+                <h5 class="heading_small">We recommend some very useful garden & lawn related tools you can buy online
+                </h5>
+            </div>
+            <div class="row">
+                @foreach ($products as $product)
+                    <div class="col-sm-12 col-md-3 animated slide res_mrg">
+                        <div class="tool">
+                            <figure>
+                                <a href="{{ route('product-detail', ['id'=>$product->id]) }}"><img src="{{ asset($product->image) }}" alt="img" /></a>
+                            </figure>
+                            <div class="detail">
+                                <h5><a href="{{ route('product-detail', ['id'=>$product->id]) }}">{{ $product->name }}</a></h5>
+                                <span class="prc">৳. {{ $product->selling_price }}</span>
+                                <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                
+            </div>
+        </div>
+    </div>
+    <!--End Tools -->
     <!--Start Quote-->
     <div class="qoute_wrap seaction_margin  animated entrance">
         <div class="layer">
@@ -418,121 +428,6 @@
         </div>
     </div>
     <!--End Testimonials -->
-    <!--Start Tools -->
-    <div class="tools_wrap seaction_margin">
-        <div class="container">
-            <div class="heading_wrap animated slide">
-                <div class="icon_bar"></div>
-                <h2 class="heading_a">shop <span>lawn tools</span></h2>
-                <h5 class="heading_small">We recommend some very useful garden & lawn related tools you can buy online
-                </h5>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-3 animated slide res_mrg">
-                    <div class="tool">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool1.png') }}" alt="img" /></a>
-                        </figure>
-                        <div class="detail">
-                            <h5><a href="#">Electric Mover</a></h5>
-                            <span class="prc">$250.50</span>
-                            <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 animated slide res_mrg">
-                    <div class="tool">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool2.png') }}" alt="img" /></a>
-                        </figure>
-                        <div class="detail">
-                            <h5><a href="#">Electric Mover</a></h5>
-                            <span class="prc">$250.50</span>
-                            <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 animated slide res_mrg">
-                    <div class="tool">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool3.png') }}" alt="img" /></a>
-                        </figure>
-                        <div class="detail">
-                            <h5><a href="#">Electric Mover</a></h5>
-                            <span class="prc">$250.50</span>
-                            <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 animated slide res_mrg">
-                    <div class="tool">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/tool4.png') }}" alt="img" /></a>
-                        </figure>
-                        <div class="detail">
-                            <h5><a href="#">Electric Mover</a></h5>
-                            <span class="prc">$250.50</span>
-                            <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End Tools -->
-    <!--Start News -->
-    <div class="news_wrap seaction_margin">
-        <div class="container">
-            <div class="heading_wrap">
-                <div class="icon_bar"></div>
-                <h2 class="heading_a">Our <span>News blog</span></h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new1.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new2.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new3.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End News -->
+
     
 @endsection

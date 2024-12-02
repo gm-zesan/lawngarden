@@ -26,14 +26,9 @@ return new class extends Migration
             $table->integer('selling_price')->default(0);
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
-            $table->longText('islamic_reference')->nullable();
-            $table->longText('scientific_reference')->nullable();
-            $table->decimal('discount', 8, 2)->nullable();
             $table->text('image')->nullable();
             $table->integer('hit_count')->default(0);
             $table->integer('sales_count')->default(0);
-            $table->tinyInteger('featured_status')->default(0);
-            $table->boolean('special_offer')->default(false);
             $table->tinyInteger('status')->default(1);
             
 

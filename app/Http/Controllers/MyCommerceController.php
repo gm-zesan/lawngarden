@@ -12,15 +12,10 @@ class MyCommerceController extends Controller
 {
     public function index() {
         return view('website.home.index', [
-            'categories' => Category::with('subCategories')->withCount('products')->get(),
-            'special_offer_products' => Product::where('special_offer', 1)
-                            ->orderBy('id', 'desc')
-                            ->take(4)
-                            ->get(),
             'products' => Product::with('category')
                             ->where('status', 1)
                             ->orderBy('id', 'desc')
-                            ->take(8)
+                            ->take(4)
                             ->get(),
             'blogs' => Blog::with(['category', 'createdBy'])
                             ->orderBy('id', 'desc')
@@ -72,9 +67,9 @@ class MyCommerceController extends Controller
                            ->limit(4)
                            ->get();
     
-        return view('website.detail.index', [
+        return view('website.products.details', [
             'product' => $product,
-            'products' => $relatedProducts
+            'relatedProducts' => $relatedProducts
         ]);
     }
 

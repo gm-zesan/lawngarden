@@ -21,8 +21,6 @@
                                     <th>Category Name</th>
                                     <th>Sub Category Name</th>
                                     <th>Description</th>
-                                    <th>Image</th>
-                                    <th>Publication Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -33,9 +31,6 @@
                                         <td>{{ $sub_category->category->name }}</td>
                                         <td>{{ $sub_category->name }}</td>
                                         <td>{{ $sub_category->description }}</td>
-                                        <td><img src="{{ asset($sub_category->image) }}" alt="{{ $sub_category->name }}"
-                                                height="50" width="80"></td>
-                                        <td>{{ $sub_category->status == 1 ? 'Published' : 'UnPublished' }}</td>
                                         <td>
                                             <a href="{{ route('sub-category.edit', ['id' => $sub_category->id]) }}"
                                                 class="btn btn-success btn-sm">

@@ -29,11 +29,11 @@ Route::get('/contact', [MyCommerceController::class, 'contact'])->name('contact'
 Route::get('/blog', [MyCommerceController::class, 'blog'])->name('blog');
 Route::get('/projects', [MyCommerceController::class, 'allProjects'])->name('all-projects');
 Route::get('/all-products', [MyCommerceController::class, 'allProducts'])->name('all-products');
+Route::get('/product-detail/{id}', [MyCommerceController::class, 'detail'])->name('product-detail');
 
 
 Route::get('/product-category/{id}', [MyCommerceController::class, 'category'])->name('product-category');
 Route::get('/product-sub-category/{id}', [MyCommerceController::class, 'subCategory'])->name('product-sub-category');
-Route::get('/product-detail/{id}', [MyCommerceController::class, 'detail'])->name('product-detail');
 Route::post('/contact/store', [ContactFormController::class, 'store'])->name('contact.message.store');
 Route::get('/blog-detail/{id}', [MyCommerceController::class, 'blogDetail'])->name('blog-detail');
 Route::get('/category-wise-blogs/{id}', [MyCommerceController::class, 'categoryWiseBlogs'])->name('category-wise-blogs');

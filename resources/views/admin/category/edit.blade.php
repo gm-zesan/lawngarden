@@ -33,27 +33,7 @@
                                 <textarea class="form-control" id="" name="description" rows="5">{{ $category->description }}</textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="form-label col-sm-3 control-label" for="web">Category Image</label>
-                            <div class="col-sm-9">
-                                <input type="file" id="input-file-now" class="dropify" name="image" />
-                                <img src="{{ asset($category->image) }}" alt="{{ $category->name }}" height="100"
-                                    width="130">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 control-label">Publication Status</label>
-                            <div class="col-sm-9">
-                                <label class="me-3">
-                                    <input type="radio" name="status" {{ $category->status == 1 ? 'checked' : '' }}
-                                        value="1"> Published
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="2"
-                                        {{ $category->status == 2 ? 'checked' : '' }}> Unpublished
-                                </label>
-                            </div>
-                        </div>
+                        
                         <div class="form-group row m-b-0">
                             <div class="offset-sm-3 col-sm-9">
                                 <button type="submit" class="btn btn-success waves-effect waves-light text-white">Update

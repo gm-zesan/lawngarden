@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
             SubCategorySeeder::class,
             UnitSeeder::class,
             ProductSeeder::class,
-            OtherImageSeeder::class,
             
             BlogCategorySeeder::class,
             BlogSeeder::class,

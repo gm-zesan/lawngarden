@@ -56,10 +56,6 @@
                                 <td>{{ $product->selling_price }}</td>
                             </tr>
                             <tr>
-                                <th>Product Discount</th>
-                                <td>{{ $product->discount }} % </td>
-                            </tr>
-                            <tr>
                                 <th>Short Description</th>
                                 <td>{{ $product->short_description }}</td>
                             </tr>
@@ -67,28 +63,11 @@
                                 <th style="width: 25%">Long Description</th>
                                 <td>{!! $product->long_description !!}</td>
                             </tr>
-                            <tr>
-                                <th>Islamic Reference</th>
-                                <td>{!! $product->islamic_reference !!}</td>
-                            </tr>
-                            <tr>
-                                <th>Scientific Reference</th>
-                                <td>{!! $product->scientific_reference !!}</td>
-                            </tr>
 
                             <tr>
                                 <th>Product Feture Image</th>
                                 <td>
                                     <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" height="100" width="100">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Product Other Images</th>
-                                <td>
-                                    @foreach ($product->otherImages as $otherImage)
-                                        <img src="{{ asset($otherImage->image) }}" alt="{{ $product->name }}"
-                                            height="100" width="100">
-                                    @endforeach
                                 </td>
                             </tr>
                             <tr>
@@ -100,16 +79,9 @@
                                 <td>{{ $product->sales_count }}</td>
                             </tr>
                             <tr>
-                                <th>Product Feture Status</th>
-                                <td>{{ $product->feature_status == 1 ? 'Feature' : 'Not Feature' }}</td>
-                            </tr>
-                            <tr>
                                 <th>Publication Status</th>
                                 <td>{{ $product->status == 1 ? 'Published' : 'Unpublished' }}</td>
                             </tr>
-                            <tr>
-                                <th>Special Offer Product</th>
-                                <td>{{ $product->special_offer == 1 ? 'Yes' : 'No' }}</td>
                         </table>
                     </div>
                 </div>

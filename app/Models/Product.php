@@ -22,14 +22,9 @@ class Product extends Model
         'selling_price',
         'short_description',
         'long_description',
-        'islamic_reference',
-        'scientific_reference',
-        'discount',
         'image',
         'hit_count',
         'sells_count',
-        'featured_status',
-        'special_offer', 
         'status',
     ];
 
@@ -56,12 +51,8 @@ class Product extends Model
         self::$product->selling_price   = $request->selling_price;
         self::$product->short_description = $request->short_description;
         self::$product->long_description = $request->long_description;
-        self::$product->islamic_reference = $request->islamic_reference;
-        self::$product->scientific_reference = $request->scientific_reference;
-        self::$product->discount        = $request->discount;
         self::$product->image           = self::getImageUrl($request);
         self::$product->status          = $request->status;
-        self::$product->special_offer   = $request->has('special_offer') ? 1 : 0;
 
         self::$product->save();
         return self::$product;
@@ -89,8 +80,6 @@ class Product extends Model
         self::$product->selling_price   = $request->selling_price;
         self::$product->short_description = $request->short_description;
         self::$product->long_description = $request->long_description;
-        self::$product->islamic_reference = $request->islamic_reference;
-        self::$product->scientific_reference = $request->scientific_reference;
         self::$product->image = self::$imageUrl;
         self::$product->status = $request->status;
         self::$product->save();
@@ -115,9 +104,5 @@ class Product extends Model
     public function unit(){
         return $this->belongsTo(Unit::class);
     }
-    public function otherImages(){
-        return $this->hasMany(OtherImage::class);
-    }
-
 
 }

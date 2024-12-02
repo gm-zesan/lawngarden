@@ -20,8 +20,6 @@
                                     <th>SL NO</th>
                                     <th>Category Name</th>
                                     <th>Category Description</th>
-                                    <th>Category Image</th>
-                                    <th>Publication Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -31,9 +29,6 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->description }}</td>
-                                        <td><img src="{{ asset($category->image) }}" alt="{{ $category->name }}"
-                                                height="50" width="80"></td>
-                                        <td>{{ $category->status == 1 ? 'Published' : 'UnPublished' }}</td>
                                         <td>
                                             <a href="{{ route('category.edit', ['id' => $category->id]) }}"
                                                 class="btn btn-success btn-sm">
