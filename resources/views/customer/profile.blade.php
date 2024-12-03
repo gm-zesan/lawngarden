@@ -3,6 +3,9 @@
 @section('title')
     Edit Profile
 @endsection
+@section('page-title')
+    My Profile
+@endsection
 
 @push('styles')
     <style>
@@ -11,7 +14,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            border: 2px solid #4b8b3b;
+            border: 2px solid #7da500;
             border-radius: 50%;
             height: 130px;
             width: 130px;

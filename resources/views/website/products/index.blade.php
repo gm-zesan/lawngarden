@@ -34,7 +34,12 @@
                             <div class="detail">
                                 <h5><a href="{{ route('product-detail', ['id'=>$product->id]) }}">{{ $product->name }}</a></h5>
                                 <span class="prc">৳. {{ $product->selling_price }}</span>
-                                <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
+                                <form action="{{ route('add-to-cart', ['id' => $product->id]) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="qty" class="form-control" value="1"
+                                            min="1">
+                                    <button type="submit"><i class="fa fa-shopping-basket"></i> add to cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>

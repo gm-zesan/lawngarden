@@ -37,18 +37,19 @@
                         <h2>{{ $product->name }}</h2>
                     </div>
                     <div class="product-detail-side">
-                        <span><del>৳. {{ $product->regular_price }}</del></span><span class="new-price">৳. {{ $product->selling_price }}</span>
+                        <span><del>৳. {{ $product->regular_price }}</del></span><span class="new-price">৳.
+                            {{ $product->selling_price }}</span>
                     </div>
                     <div class="category">
                         <h5>Category : <a href="#">{{ $product->category->name }}</a></h5>
                     </div>
                     <div class="detail-contant">
-                        @if($product->stock_amount > 0)
-                            <form class="cart" method="post"
-                                action="http://www.shmai.com/preview/lawnexpress-html/cart.html">
+                        @if ($product->stock_amount > 0)
+                            <form class="cart" method="POST" action="{{ route('add-to-cart', ['id' => $product->id]) }}">
+                                @csrf
                                 <div class="quantity">
-                                    <input step="1" min="1" max="5" name="quantity" value="1"
-                                        title="Qty" class="input-text qty text" size="4" type="number">
+                                    <input step="1" min="1" name="qty" value="1" title="Qty"
+                                        class="input-text qty text" size="4" type="number">
                                 </div>
                                 <button type="submit" class="theme-btn btn-style-one">Add to cart</button>
                             </form>
@@ -88,7 +89,8 @@
                                         <div class="commant-text row">
                                             <div class="col-lg-2 col-md-2 col-sm-4">
                                                 <div class="profile">
-                                                    <img class="img-responsive" src="{{ asset('website/assets/images/custom/insta.png') }}"
+                                                    <img class="img-responsive"
+                                                        src="{{ asset('website/assets/images/custom/insta.png') }}"
                                                         alt="#">
                                                 </div>
                                             </div>
@@ -112,7 +114,8 @@
                                         <div class="commant-text row">
                                             <div class="col-lg-2 col-md-2 col-sm-4">
                                                 <div class="profile">
-                                                    <img class="img-responsive" src="{{ asset('website/assets/images/custom/insta5.png') }}"
+                                                    <img class="img-responsive"
+                                                        src="{{ asset('website/assets/images/custom/insta5.png') }}"
                                                         alt="#">
                                                 </div>
                                             </div>
@@ -171,7 +174,7 @@
     </section>
     <!-- end section -->
     <!--Start section-->
-    @if(count($relatedProducts) > 0)
+    @if (count($relatedProducts) > 0)
         <div class="tools_wrap tools_wrap_two seaction_margin">
             <div class="container">
                 <div class="heading_wrap  animated fadess">
@@ -183,12 +186,20 @@
                         <div class="col-sm-12 col-md-3 animated slide res_mrg">
                             <div class="tool">
                                 <figure>
-                                    <a href="{{ route('product-detail', ['id'=>$product->id]) }}"><img src="{{ asset($product->image) }}" alt="img" /></a>
+                                    <a href="{{ route('product-detail', ['id' => $product->id]) }}"><img
+                                            src="{{ asset($product->image) }}" alt="img" /></a>
                                 </figure>
                                 <div class="detail">
-                                    <h5><a href="{{ route('product-detail', ['id'=>$product->id]) }}">{{ $product->name }}</a></h5>
+                                    <h5><a
+                                            href="{{ route('product-detail', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                    </h5>
                                     <span class="prc">৳. {{ $product->selling_price }}</span>
-                                    <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
+                                    <form action="{{ route('add-to-cart', ['id' => $product->id]) }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="qty" class="form-control" value="1"
+                                            min="1">
+                                        <button type="submit"><i class="fa fa-shopping-basket"></i> add to cart</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

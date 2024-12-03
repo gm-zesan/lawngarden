@@ -3,14 +3,29 @@
 @push('styles')
     <style>
         .list-group .active{
-            background-color: #439322;
-            border-color: #439322;
+            background-color: #7da500;
+            border-color: #7da500;
         }
         
     </style>
 @endpush
 
 @section('body')
+    <!--Start Page Title-->
+    <div class="page_title bg3">
+        <div class="layer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h1>@yield('page-title')</h1>
+                        <div class="beadcrumb">
+                            <a href="#">Home</a> <i class="fa fa-angle-right"></i> <span>@yield('page-title')</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

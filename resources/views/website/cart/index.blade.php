@@ -44,179 +44,80 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img class="img-rounded"
-                                                    src="{{ asset('website/assets/images/custom/tool1.png') }}"
-                                                    alt="img"></td>
-                                            <td>
-                                                <p>
-                                                    Finance Book
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="quantity">
-                                                    <input step="1" min="1" max="5" name="quantity"
-                                                        value="1" title="Qty" class="input-text qty text"
-                                                        size="4" type="number">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td><a href="#"><i class="fa fa-times"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="img-rounded"
-                                                    src="{{ asset('website/assets/images/custom/tool2.png') }}"
-                                                    alt="img"></td>
-                                            <td>
-                                                <p>
-                                                    Finance Book
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="quantity">
-                                                    <input step="1" min="1" max="5" name="quantity"
-                                                        value="1" title="Qty" class="input-text qty text"
-                                                        size="4" type="number">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td><a href="#"><i class="fa fa-times"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img class="img-rounded"
-                                                    src="{{ asset('website/assets/images/custom/tool3.png') }}"
-                                                    alt="img"></td>
-                                            <td>
-                                                <p>
-                                                    Finance Book
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="cart_amount_wrap">
+                                        @php($sum = 0)
+                                        @foreach ($cart_products as $cart_product)
+                                            <tr>
+                                                <td><img class="img-rounded"
+                                                        src="{{ asset($cart_product->image) }}"
+                                                        alt="{{ $cart_product->name }}"></td>
+                                                <td>
+                                                    <p>
+                                                        {{ $cart_product->name }}
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        ৳. {{ $cart_product->price }}
+                                                    </p>
+                                                </td>
+                                                <td>
                                                     <div class="quantity">
-                                                        <input step="1" min="1" max="5" name="quantity"
-                                                            value="1" title="Qty" class="input-text qty text"
-                                                            size="4" type="number">
+                                                        <form action="{{ route('update-cart-product', ['id' => $cart_product->__raw_id]) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <div class="input-group">
+                                                                <input class="input-text qty text" type="number" value="{{ $cart_product->qty }}"
+                                                                    name="qty">
+                                                                <input type="submit" value="Update" class="btn btn-success" style="background-color: #7da500;">
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    $ 59.99
-                                                </p>
-                                            </td>
-                                            <td><a href="#"><i class="fa fa-times"></i></a></td>
-                                        </tr>
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        ৳. {{ $cart_product->price * $cart_product->qty }}
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <a  onclick="return confirm('Are you sure to delete this..')" href="{{ route('remove-cart-product', ['id' => $cart_product->__raw_id]) }}">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            @php($sum += $cart_product->price * $cart_product->qty)
+                                        @endforeach
                                     </tbody>
                                 </table>
                                 <!-- table End -->
                             </div>
                             <div class="row cart_btns">
-                                <div class="col-lg-6 col-sm-12 res_mrg coupan_code">
-                                    <form action="#">
-                                        <input type="text" placeholder="Coupon Code" class="common_btn cart_page_btn1"
-                                            name="coupon">
-                                    </form>
-                                    <a class="theme-btn btn-style-two cart_page_btn2" href="#">Apply coupon</a>
+                                <div class="col-md-6 col-sm-12 cont_btn">
+                                    <a class="theme-btn btn-style-two" href="{{ route('all-products') }}">Continue Shopping </a>
                                 </div>
                                 <!-- column End -->
-                                <div class="col-lg-6 col-sm-12 text-end cont_btn">
-                                    <a class="theme-btn btn-style-two" href="#">Continue Shopping </a>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="cart_totals_area gray-bg cart-2">
+                                        <ul>
+                                            <li>
+                                                Subtotal <span>৳. {{ $sum }}</span>
+                                            </li>
+                                            <li>
+                                                Shipping Charge<span>৳. {{ $shipping = 100 }}</span>
+                                            </li>
+                                            <li>
+                                                <strong>Total</strong><span><strong> ৳. {{ $totalPayable = $sum + $shipping }} </strong></span>
+                                            </li>
+                                        </ul>
+                                        <a class="theme-btn btn-style-two" href="{{ route('checkout') }}">Proceed To Checkout</a>
+                                    </div>
+                                    <!-- column End -->
                                 </div>
-                                <!-- column End -->
                             </div>
                             <!-- cart_btns End -->
                         </div>
                     </div>
                     <!-- column End -->
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="estimate-section">
-        <div class="container">
-            <div class="estimate-form">
-                <div class="heading_wrap animated slide">
-                    <div class="icon_bar"></div>
-                    <h2 class="heading_a">Estimate <span>Cost</span></h2>
-                </div>
-                <form method="post" action="#" class="default-form">
-                    <div class="clearfix">
-                        <!--Form Group-->
-                        <div class="form-group row">
-                            <div class="col-sm-12 col-md-6">
-                                <div class="select_option_one margin_btm">
-                                    <select name="userSelect" id="userSelect" class="">
-                                        <option value="1">Country</option>
-                                        <option value="2">Unitate State</option>
-                                        <option value="3">Canada</option>
-                                        <option value="4">Bangladesh</option>
-                                    </select>
-                                </div>
-                                <div class="select_option_one margin_btm">
-                                    <select name="userSelect1" id="userSelect1" class="">
-                                        <option value="1">State</option>
-                                        <option value="2">Alabama</option>
-                                        <option value="3">Alaska</option>
-                                        <option value="4">Lowa</option>
-                                    </select>
-                                </div>
-                                <div class="select_option_one margin_btm">
-                                    <select name="userSelect2" id="userSelect2" class="">
-                                        <option value="1">City</option>
-                                        <option value="2">Bristol</option>
-                                        <option value="3">Washington</option>
-                                        <option value="4">Salem</option>
-                                    </select>
-                                </div>
-                                <input type="text" name="check_zip" placeholder="Zip Code" class="margin_btm">
-                                <div class="form-group get_btn">
-                                    <a class="theme-btn btn-style-two" href="checkout.html">Get Total</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="cart_totals_area gray-bg cart-2">
-                                    <ul>
-                                        <li>
-                                            Subtotal <span>$29.99</span>
-                                        </li>
-                                        <li>
-                                            Shipping Charge<span>free</span>
-                                        </li>
-                                        <li>
-                                            <strong>Total</strong><span><strong> $ 59.99 </strong></span>
-                                        </li>
-                                    </ul>
-                                    <a class="theme-btn btn-style-two" href="checkout.html">Proceed To Checkout</a>
-                                </div>
-                                <!-- column End -->
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </section>

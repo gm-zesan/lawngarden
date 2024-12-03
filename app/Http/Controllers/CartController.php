@@ -19,7 +19,7 @@ class CartController extends Controller
             $this->product->selling_price = $this->product->selling_price - ($this->product->selling_price * $this->product->discount / 100);
         }
         ShoppingCart::add($this->product->id,$this->product->name,$request->qty,$this->product->selling_price,['image'=>$this->product->image, 'category'=>$this->product->category->name, 'code'=>$this->product->code]);
-        return redirect('/show-cart');
+        return redirect()->back();
     }
 
     

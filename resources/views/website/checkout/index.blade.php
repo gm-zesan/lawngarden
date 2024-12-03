@@ -4,21 +4,57 @@
     Checkout Page
 @endsection
 
-@section('body')
+@push('styles')
+    <style>
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+            background-color: #7da500;
+            color: #fff;
+        }
+        .nav-link{
+            color: #7da500;
+        }
+        .nav-link:hover, .nav-link:focus{
+            color: #7da500;
+        }
+        .checkout-sidebar{
+            background-color: #7da500;
+            padding: 50px 30px;
+        }
+        .checkout-sidebar p{
+            color: #fff;
+        }
+    </style>
+@endpush
 
+@section('body')
+    <!--Start Page Title-->
+    <div class="page_title bg3">
+        <div class="layer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h1>Checkout</h1>
+                        <div class="beadcrumb">
+                            <a href="#">Home</a> <i class="fa fa-angle-right"></i> <span>Checkout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="checkout-wrapper section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="checkout-steps-form-style-1">
-                        <ul class="nav nav-pills">
+                        <ul class="nav nav-pills justify-content-center">
                             <li> <a href="" class="nav-link active" data-bs-target="#cash" data-bs-toggle="pill">
                                     Cash On Delivery</a></li>
                             <li> <a href="" class="nav-link" data-bs-target="#online" data-bs-toggle="pill">
                                     Online</a></li>
                         </ul>
-                        <div class="tab-content">
+                        <div class="tab-content my-5">
                             <div class="tab-pane fade show active" id="cash">
                                 <form action="{{ route('new-cash-order') }}" method="POST">
                                     @csrf
@@ -28,10 +64,9 @@
                                                 <label>Full Name</label>
                                                 <div class="col-md-12 form-input form">
                                                     @if (isset($customer->id))
-                                                        <input type="text" name="name" value="{{ $customer->name }}"
-                                                            readonly required>
+                                                        <input type="text" name="name" value="{{ $customer->name }}" class="form-control" readonly required>
                                                     @else
-                                                        <input type="text" name="name" required
+                                                        <input type="text" name="name" class="form-control" required
                                                             placeholder="Full Name">
                                                         <span
                                                             class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}
@@ -45,10 +80,10 @@
                                                 <label>Email Address</label>
                                                 <div class="form-input form">
                                                     @if (isset($customer->id))
-                                                        <input type="email" name="email" value="{{ $customer->email }}"
+                                                        <input type="email" name="email" value="{{ $customer->email }}" class="form-control"
                                                             readonly required>
                                                     @else
-                                                        <input type="email" name="email" required
+                                                        <input type="email" name="email" class="form-control" required
                                                             placeholder="Email Address">
                                                         <span
                                                             class="text-danger">{{ $errors->has('email') ? $errors->first('email') : '' }}
@@ -63,10 +98,10 @@
                                                 <label>Phone Number</label>
                                                 <div class="form-input form">
                                                     @if (isset($customer->id))
-                                                        <input type="number" name="mobile" value="{{ $customer->mobile }}"
+                                                        <input type="number" name="mobile" class="form-control" value="{{ $customer->mobile }}"
                                                             readonly required>
                                                     @else
-                                                        <input type="number" name="mobile" required
+                                                        <input type="number" name="mobile" class="form-control" required
                                                             placeholder="Phone Number">
                                                         <span
                                                             class="text-danger">{{ $errors->has('mobile') ? $errors->first('mobile') : '' }}
@@ -79,7 +114,7 @@
                                             <div class="single-form form-default">
                                                 <label>Delivery Address</label>
                                                 <div class="form-input form">
-                                                    <textarea name="delivery_address" style="padding-top: 10px;height: 100px" placeholder="Order Delivery Address" required></textarea>
+                                                    <textarea name="delivery_address" style="padding-top: 10px;height: 100px"  class="form-control" placeholder="Order Delivery Address" required></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,13 +133,12 @@
                                         <div class="col-md-12">
                                             <div class="single-checkbox checkbox-style-3">
                                                 <input type="checkbox" id="checkbox-3" checked>
-                                                <label for="checkbox-3"><span></span></label>
-                                                <p>I accept all terms & conditions.</p>
+                                                <label for="checkbox-3"><span>I accept all terms & conditions.</span></label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="single-form button">
-                                                <button class="btn" type="submit">Confirm Order</button>
+                                            <div class="mt-3">
+                                                <button class="theme-btn btn-style-two" type="submit">Confirm Order</button>
                                             </div>
                                         </div>
                                     </div>
@@ -205,8 +239,8 @@
                                             <p>I accept all terms & conditions.</p>
                                         </div>
                                     </div>
-                                    <div class="single-form button">
-                                        <button class="btn" type="submit">Continue to checkout</button>
+                                    <div class="mt-3">
+                                        <button class="theme-btn btn-style-two" type="submit">Continue to checkout</button>
                                     </div>
                                 </form>
                             </div>
@@ -217,41 +251,36 @@
                 <div class="col-lg-4">
                     <div class="checkout-sidebar">
                         <div class="checkout-sidebar-price-table">
-                            <h5 class="title">Shopping Summary</h5>
-                            <div class="sub-total-price">
+                            <h3 class="text-center mb-3 fw-bold">Shopping Summary</h3>
+                            <div class="sub-total-price mb-3">
                                 @php($total = 0)
                                 @foreach (ShoppingCart::all() as $item)
-                                    <div class="total-price">
-                                        <p class="value">{{ $item->name }} ->({{ $item->price }} *
+                                    <div class="total-price d-flex">
+                                        <p class="value">{{ $item->name }} ({{ $item->price }} *
                                             {{ $item->qty }})
                                         </p>
-                                        <p class="price">= ৳. {{ $item->price * $item->qty }}</p>
+                                        <p class="price">  =  ৳. {{ $item->price * $item->qty }}</p>
                                     </div>
                                     @php($total += $item->price * $item->qty)
                                 @endforeach
                             </div>
                             <div class="total-payable">
-                                <div class="payable-price">
+                                <div class="payable-price d-flex">
                                     <p class="value">Subotal Price:</p>
                                     <p class="price">৳. {{ $total }}</p>
                                 </div>
-                                <div class="payable-price">
-                                    <p class="value">Tax(15%):</p>
-                                    <p class="price">৳. {{ $tax = round(($total * 15) / 100) }}</p>
-                                </div>
-                                <div class="payable-price">
+                                <div class="payable-price d-flex">
                                     <p class="value">Shipping :</p>
                                     <p class="price">৳. {{ $shipping = 100 }}</p>
                                 </div>
                             </div>
                             <div class="total-payable">
-                                <div class="payable-price">
+                                <div class="payable-price d-flex">
                                     <p class="value">Total:</p>
-                                    <p class="price">৳. {{ $orderTotal = $total + $tax + $shipping }}</p>
+                                    <p class="price">৳. {{ $orderTotal = $total + $shipping }}</p>
                                 </div>
                                 <?php
                                 Session::put('order_total', $orderTotal);
-                                Session::put('tax_total', $tax);
                                 Session::put('shipping_total', $shipping);
                                 ?>
                             </div>

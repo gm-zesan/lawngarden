@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BlogCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,7 @@ class BlogCategorySeeder extends Seeder
         );
 
         foreach ($blog_categories as $blog_category) {
-            \App\Models\BlogCategory::create($blog_category);
+            BlogCategory::create($blog_category);
         }
     }
 }

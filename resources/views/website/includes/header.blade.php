@@ -42,8 +42,19 @@
                 </div>
                 <div class="col-sm-12 col-md-3 col-xl-3 responsive_center ms-auto">
                     <div class="cart_info">
-                        <a href="{{ route('show-cart') }}"><img src="{{ asset('website/assets/images/cart.png') }}" alt="img" /> <span>3</span></a>
-                        <a href="{{ route('customer.login') }}" class="account_info">Sign in / Sign up</a>
+                        <a href="{{ route('show-cart') }}"><img src="{{ asset('website/assets/images/cart.png') }}" alt="img" />
+                            @php
+                                $count = count(ShoppingCart::all());
+                            @endphp
+                            @if($count > 0)
+                                <span>{{ $count }}</span>
+                            @endif
+                        </a>
+                        @if (Session::get('customer_id'))
+                            <a href="{{ route('customer.profile') }}" class="account_info">My Account</a>
+                        @else
+                            <a href="{{ route('customer.login') }}" class="account_info">Sign in / Sign up</a>
+                        @endif
                     </div>
                 </div>
             </div>

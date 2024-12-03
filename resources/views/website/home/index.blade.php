@@ -246,48 +246,24 @@
                 <h2 class="heading_a">Our <span>News blog</span></h2>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new1.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
+                @foreach ($blogs as $blog)
+                    <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
+                        <div class="news">
+                            <figure>
+                                <a href="{{ route('blog-detail', ['id' => $blog->id]) }}">
+                                    <img src="{{ asset($blog->image) }}" alt="{{ $blog->name }}">
+                                </a>
+                                <span class="date">{{ $blog->created_at->format('d') }}<cite>{{ $blog->created_at->format('F') }}</cite></span>
+                            </figure>
+                            <div class="content">
+                                <h5>{{ $blog->createdBy->name }}</h5>
+                                <h3><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{$blog->title}}</a></h3>
+                                <a href="{{ route('blog-detail', ['id' => $blog->id]) }}">read more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new2.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 animated slide">
-                    <div class="news">
-                        <figure>
-                            <a href="#"><img src="{{ asset('website/assets/images/custom/new3.jpg') }}" alt="img"></a>
-                            <span class="date">25 <cite>April</cite></span>
-                        </figure>
-                        <div class="content">
-                            <h5>clients, case-study</h5>
-                            <h3><a href="#">Dolor sit amet adipis slcin elit sed
-                                    eiusmod temp incididunt</a></h3>
-                            <a href="services.html">read more</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -311,7 +287,12 @@
                             <div class="detail">
                                 <h5><a href="{{ route('product-detail', ['id'=>$product->id]) }}">{{ $product->name }}</a></h5>
                                 <span class="prc">৳. {{ $product->selling_price }}</span>
-                                <a href="cart.html"><i class="fa fa-shopping-basket"></i> add to cart</a>
+                                <form action="{{ route('add-to-cart', ['id' => $product->id]) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="qty" class="form-control" value="1"
+                                            min="1">
+                                    <button type="submit"><i class="fa fa-shopping-basket"></i> add to cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -330,41 +311,15 @@
                         <div class="icon_bar"></div>
                         <h2 class="heading_a">Get Instant Quote</h2>
                     </div>
-                    <form action="http://www.shmai.com/preview/lawnexpress-html/process.php" method="post"
-                        id="quote_form" class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" placeholder="Name" class="form-control" name="user_name" />
+                    <div class="row text-center gy-3">
+                        <div class="col-sm-12 col-xl-12 res_mrg">
+                            <a href="{{ route('contact') }}" class="button">Contact Us</a>
                         </div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="user_phone" placeholder="Phone no." class="form-control" />
+                        <p>OR</p>
+                        <div class="col-sm-12 col-xl-12">
+                            <p>Call Us: <strong>+880 192 132 4091</strong></p>
                         </div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="email" name="user_email" placeholder="Email" class="form-control" />
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <select class="form-control">
-                                <option value="">Service Required</option>
-                                <option value="">Service Required</option>
-                                <option value="">Service Required</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="lawn_area" placeholder="Lawn Area (Sq Ft)"
-                                class="form-control" />
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="price" placeholder="$0.00" class="form-control" />
-                        </div>
-                        <div class="col-sm-12 col-md-12">
-                            <textarea name="message_box" placeholder="How can we help?" class="form-control"></textarea>
-                        </div>
-                        <div class="col-sm-12 col-xl-4 res_mrg">
-                            <input type="submit" class="button" value="get estimate" name="get" id="get_quote" />
-                        </div>
-                        <div class="col-sm-12 col-xl-8">
-                            <p>OR Call Us: <strong>+880 192 132 4091</strong></p>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

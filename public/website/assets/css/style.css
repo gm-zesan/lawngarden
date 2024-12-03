@@ -1767,6 +1767,18 @@ input.button {
     border-radius: 5px;
     text-transform: uppercase;
 }
+.tool .detail button {
+    background: #7da500;
+    padding: 10px 0px;
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+}
 
 .tools_wrap_two {
     padding: 0px;

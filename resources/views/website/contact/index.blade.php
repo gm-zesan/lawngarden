@@ -5,10 +5,9 @@
 @endsection
 
 @section('body')
-    <div style="position: fixed; top: -20px; left: 50%; transform: translate(-50%, -50%); background-image: linear-gradient(to right, #A1CDA0, #4B8B3B); color: #fff; padding: 5px 15px; border-radius: 5px; display: flex; align-items: center; gap: 10px; opacity: 0; z-index: -1;"
-        id="success-message">
+    <div style="position: fixed; top: -20px; left: 50%; transform: translate(-50%, -50%); background-color: #fff; color: #7da500; padding: 5px 15px; border-radius: 5px; display: flex; align-items: center; gap: 10px; opacity: 0; z-index: -1;" id="success-message">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512">
-            <path fill="#ffffff"
+            <path fill="#7da500"
                 d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
         </svg> Message sent successfully
     </div>
@@ -62,29 +61,19 @@
                         </p>
                         <p class="success" id="success" style="display:none;"></p>
                         <p class="error" id="error" style="display:none;"></p>
-                        <form action="http://www.shmai.com/preview/lawnexpress-html/process.php" method="post"
-                            id="contact_form" class="row">
-                            <div class="col-sm-12 col-md-6">
-                                <input type="text" placeholder="First Name" class="form-control" name="contact_name"
-                                    id="contact_name" />
+                        <form id="contactForm" class="row">
+                            @csrf
+                            <div class="col-sm-12 col-md-12">
+                                <input type="text" placeholder="Full Name" class="form-control" name="name"/>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <input type="text" placeholder="Last Name" class="form-control" />
+                                <input type="email" placeholder="Email address" class="form-control" name="email"/>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <input type="email" placeholder="Email address" class="form-control" name="contact_email"
-                                    id="contact_email" />
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <input type="text" placeholder="Phone no." class="form-control" name="contact_phone"
-                                    id="contact_sphone" />
+                                <input type="tel" placeholder="Phone no." class="form-control" name="phone"/>
                             </div>
                             <div class="col-sm-12 col-md-12">
-                                <select class="form-control required valid">
-                                    <option value="">Service Inquiry</option>
-                                    <option value="">Service Inquiry</option>
-                                    <option value="">Service Inquiry</option>
-                                </select>
+                                <input type="text" placeholder="Subject" class="form-control" name="subject"/>
                             </div>
                             <div class="col-sm-12 col-md-12">
                                 <textarea placeholder="Write your message..." class="form-control" name="message" id="message"></textarea>
@@ -113,6 +102,7 @@
     </div>
     <!--End Contact Map-->
 @endsection
+
 
 @push('scripts')
     <script>

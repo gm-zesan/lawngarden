@@ -5,77 +5,103 @@
 @endsection
 
 @section('body')
-    <section class="section blog-single">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-12 col-12">
-                    <div class="single-inner">
-                        <div class="post-details">
-                            <div class="main-content-head">
-                                <div class="post-thumbnils">
-                                    <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
-                                </div>
-                                <div class="meta-information">
-                                    <h2 class="post-title">
-                                        <a href="javascript:void(0)">{{ $blog->title }}</a>
-                                    </h2>
-
-                                    <ul class="meta-info">
-                                        <li>
-                                            <a href="javascript:void(0)"> <i class="lni lni-user"></i> {{ $blog->createdBy->name }}</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)"><i class="lni lni-calendar"></i> {{ $blog->created_at->diffForHumans() }}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('category-wise-blogs',['id'=>$blog->category_id]) }}"><i class="lni lni-tag"></i> {{ $blog->category->name }}</a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                                <div class="detail-inner">
-                                    {!! $blog->description !!}
-                                </div>
-                            </div>
-
+    <!--Start Page Title-->
+    <div class="page_title bg3">
+        <div class="layer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h1>{{ $blog->title }}</h1>
+                        <div class="beadcrumb">
+                            <a href="#">Home</a> <i class="fa fa-angle-right"></i> <span>Blog</span>
                         </div>
                     </div>
                 </div>
-                <aside class="col-lg-4 col-md-12 col-12">
-                    <div class="sidebar blog-grid-page">
-
-                        <div class="widget categories-widget">
-                            <h5 class="widget-title">Blog Categories</h5>
-                            <ul class="custom">
+            </div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    <!--Start Blog -->
+    <div class="blog_wrap">
+        <div class="container">
+            <div class="row">
+                <!--Start Articles-->
+                <div class="col-lg-9 col-sm-12">
+                    <section>
+                        <article class="news single  animated fades">
+                            <figure>
+                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
+                                <span class="date">{{ $blog->created_at->format('d') }}<cite>{{ $blog->created_at->format('F') }}</cite></span>
+                            </figure>
+                            <div class="content">
+                                <h5>{{ $blog->createdBy->name }}</h5>
+                                <h3><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{ $blog->title }}</a></h3>
+                                <p>
+                                    {!! $blog->description !!}
+                                </p>
+                            </div>
+                        </article>
+                        <!--End Comment Form -->
+                        <div class="comment_form seaction_margin  animated slide">
+                            <h4 class="heading_c">Post <span>a Comment</span></h4>
+                            <form action="http://www.shmai.com/preview/lawnexpress-html/process.php" method="post"
+                                class="row ">
+                                <fieldset class="col-sm-12 col-md-12 field-control">
+                                    <input type="text" placeholder="Full Name" name="name" class="form-control">
+                                    <label></label>
+                                </fieldset>
+                                <div class="clearfix"></div>
+                                <fieldset class="col-sm-12 col-md-12 field-control">
+                                    <input type="email" placeholder="Email" name="email" class="form-control">
+                                    <label></label>
+                                </fieldset>
+                                <div class="clearfix"></div>
+                                <div class="col-sm-12 col-md-12">
+                                    <textarea placeholder="Message" name="message" class="form-control"></textarea>
+                                    <input type="submit" value="submit comment" class="button yellow">
+                                </div>
+                            </form>
+                        </div>
+                        <!--End Comment Form -->
+                    </section>
+                </div>
+                <!--End Articles-->
+                <!--Start Sidebar-->
+                <div class="col-sm-12 col-lg-3">
+                    <aside>
+                        <div class="side_widget animated slide">
+                            <h5 class="heading_c">The <span>Categories </span></h5>
+                            <ul>
                                 @foreach ($blogCategories as $category)
-                                    <li>
-                                        <a href="{{ route('category-wise-blogs',['id'=>$category->id]) }}">{{ $category->name }}</a><span>({{ $category->blogs->count() }})</span>
+                                    <li><a href="{{ route('category-wise-blogs', ['id' => $category->id]) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
                         </div>
+                        <div class="side_widget animated slide">
+                            <h5 class="heading_c">Recent<span> News </span></h5>
+                            <div class="recent_post">
+                                <ul>
+                                    @foreach ($latestBlogs as $blog)
+                                        <li>
+                                            <div class="image">
+                                                <a href="{{ route('blog-detail', ['id' => $blog->id]) }}"><img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}"></a>
+                                            </div>
+                                            <div class="context">
+                                                <a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{ $blog->title }}</a>
+                                                <span><i class="fa fa-calendar"></i>{{ $blog->created_at->format('F d, y') }}</span>
+                                            </div>
+                                        </li>
+                                    @endforeach
 
-                        <div class="widget popular-feeds">
-                            <h5 class="widget-title">Latest Blogs</h5>
-                            <div class="popular-feed-loop">
-                                @foreach ($latestBlogs as $blog)
-                                    <div class="single-popular-feed">
-                                        <div class="feed-desc">
-                                            <a class="feed-img" href="{{ route('blog-detail', ['id' => $blog->id]) }}">
-                                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
-                                            </a>
-                                            <h6 class="post-title"><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{ $blog->title }}</a></h6>
-                                            <span class="time"><i class="lni lni-calendar"></i> {{ $blog->created_at->format('jS M Y') }}</span>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                </ul>
                             </div>
                         </div>
-
-                    </div>
-                </aside>
+                    </aside>
+                </div>
+                <!--End Sidebar-->
             </div>
         </div>
-    </section>
+    </div>
+    <!--End Blog -->
 @endsection

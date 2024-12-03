@@ -27,6 +27,7 @@ Route::get('/', [MyCommerceController::class, 'index'])->name('home');
 Route::get('/about', [MyCommerceController::class, 'about'])->name('about');
 Route::get('/contact', [MyCommerceController::class, 'contact'])->name('contact');
 Route::get('/blog', [MyCommerceController::class, 'blog'])->name('blog');
+Route::get('/blog-detail/{id}', [MyCommerceController::class, 'blogDetail'])->name('blog-detail');
 Route::get('/projects', [MyCommerceController::class, 'allProjects'])->name('all-projects');
 Route::get('/all-products', [MyCommerceController::class, 'allProducts'])->name('all-products');
 Route::get('/product-detail/{id}', [MyCommerceController::class, 'detail'])->name('product-detail');

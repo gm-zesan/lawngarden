@@ -3,6 +3,9 @@
 @section('title')
     My Orders
 @endsection
+@section('page-title')
+    My Orders
+@endsection
 
 @section('content')
     <table class="table table-bordered table-hover">
