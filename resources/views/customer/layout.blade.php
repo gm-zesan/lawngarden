@@ -38,11 +38,12 @@
 
     <section class="checkout-wrapper section">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-5">
                 <div class="col-md-3">
                     <div class="list-group">
                         <a href="{{ route('customer.profile') }}" class="list-group-item list-group-item-action {{ Route::currentRouteName() == 'customer.profile' ? 'active' : '' }}">Profile</a>
                         <a href="{{ route('customer.order') }}" class="list-group-item list-group-item-action {{ Route::currentRouteName() == 'customer.order' ? 'active' : '' }}">Order</a>
+                        <a href="{{ route('customer.review') }}" class="list-group-item list-group-item-action {{ Route::currentRouteName() == 'customer.review' ? 'active' : '' }}">Give a Review</a>
                         <a href="{{ route('customer.logout') }}" class="list-group-item list-group-item-action">Logout</a>
                     </div>
                 </div>

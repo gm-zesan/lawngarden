@@ -16,9 +16,7 @@
                             <h3>Using the latest technologies in landscaping</h3>
                             <h1>We are the best lawn care <br />
                                 maintenance company </h1>
-                            <a href="about.html" class="button">Learn More</a> <a
-                                href="https://themeforest.net/item/lawnexpress-lawn-mowing-gardening-landscaping-farming-and-florist-html5-responsive-template/20212910?s_rank=1"
-                                class="button">purchase theme</a>
+                            <a href="{{ route('about') }}" class="button">Learn More</a> 
                         </div>
                     </div>
                 </div>
@@ -33,7 +31,7 @@
                             <h3>Using the latest technologies in landscaping</h3>
                             <h1>We are the best lawn care <br />
                                 maintenance companies</h1>
-                            <a href="about.html" class="button">Learn More</a> <a
+                            <a href="{{ route('about') }}" class="button">Learn More</a> <a
                                 href="https://themeforest.net/item/lawnexpress-lawn-mowing-gardening-landscaping-farming-and-florist-html5-responsive-template/20212910?s_rank=1"
                                 class="button">purchase theme</a>
                         </div>
@@ -50,7 +48,7 @@
                             <h3>Using the latest technologies in landscaping</h3>
                             <h1>We are the best lawn care <br />
                                 maintenance companies</h1>
-                            <a href="about.html" class="button">Learn More</a> <a
+                            <a href="{{ route('about') }}" class="button">Learn More</a> <a
                                 href="https://themeforest.net/item/lawnexpress-lawn-mowing-gardening-landscaping-farming-and-florist-html5-responsive-template/20212910?s_rank=1"
                                 class="button">purchase theme</a>
                         </div>
@@ -120,15 +118,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon1.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh1.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon1.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh1.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Landscape Caring</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -140,15 +140,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon2.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh2.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon2.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh2.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Watering Gardens</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -160,15 +162,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon3.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh3.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon3.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh3.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>New Trees Planting</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -180,15 +184,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon4.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh4.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon4.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh4.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Rubbbish Cleanup</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -200,15 +206,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon5.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh5.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon5.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh5.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Lawn Moving</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -220,15 +228,17 @@
                         <div class="service_content">
                             <div class="row">
                                 <div class="col-sm-2 col-md-2 icon">
-                                    <img src="{{ asset('website/assets/images/icons/icon6.png') }}" class="icon_one" alt="img" />
-                                    <img src="{{ asset('website/assets/images/icons/iconh6.png') }}" class="icon_one icon_two" alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/icon6.png') }}" class="icon_one"
+                                        alt="img" />
+                                    <img src="{{ asset('website/assets/images/icons/iconh6.png') }}"
+                                        class="icon_one icon_two" alt="img" />
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Design & Planning</h3>
                                     <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
                                         ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
                                     </p>
-                                    <a href="services.html">read more</a>
+
                                 </div>
                             </div>
                         </div>
@@ -253,11 +263,13 @@
                                 <a href="{{ route('blog-detail', ['id' => $blog->id]) }}">
                                     <img src="{{ asset($blog->image) }}" alt="{{ $blog->name }}">
                                 </a>
-                                <span class="date">{{ $blog->created_at->format('d') }}<cite>{{ $blog->created_at->format('F') }}</cite></span>
+                                <span
+                                    class="date">{{ $blog->created_at->format('d') }}<cite>{{ $blog->created_at->format('F') }}</cite></span>
                             </figure>
                             <div class="content">
                                 <h5>{{ $blog->createdBy->name }}</h5>
-                                <h3><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{$blog->title}}</a></h3>
+                                <h3><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{ $blog->title }}</a>
+                                </h3>
                                 <a href="{{ route('blog-detail', ['id' => $blog->id]) }}">read more</a>
                             </div>
                         </div>
@@ -282,22 +294,25 @@
                     <div class="col-sm-12 col-md-3 animated slide res_mrg">
                         <div class="tool">
                             <figure>
-                                <a href="{{ route('product-detail', ['id'=>$product->id]) }}"><img src="{{ asset($product->image) }}" alt="img" /></a>
+                                <a href="{{ route('product-detail', ['id' => $product->id]) }}"><img
+                                        src="{{ asset($product->image) }}" alt="img" /></a>
                             </figure>
                             <div class="detail">
-                                <h5><a href="{{ route('product-detail', ['id'=>$product->id]) }}">{{ $product->name }}</a></h5>
+                                <h5><a
+                                        href="{{ route('product-detail', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                </h5>
                                 <span class="prc">৳. {{ $product->selling_price }}</span>
                                 <form action="{{ route('add-to-cart', ['id' => $product->id]) }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="qty" class="form-control" value="1"
-                                            min="1">
+                                        min="1">
                                     <button type="submit"><i class="fa fa-shopping-basket"></i> add to cart</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                
+
             </div>
         </div>
     </div>
@@ -337,39 +352,21 @@
                     <div class="col-sm-12 col-md-7">
                         <div class="testi_slider">
                             <div class="owl-carousel right-img-carousel">
-                                <div class="item">
-                                    <p>Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderite voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur excepteur sind occaecat
-                                        cupidatat non proident sunt culpa officia.
-                                    </p>
-                                    <div class="user_botom">
-                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
-                                        <span> Kenn Thomson <cite>Garden Owner</cite></span>
+
+                                @foreach ($reviews as $review)
+                                    <div class="item">
+                                        <p>
+                                            {{ $review->review }}
+                                        </p>
+                                        <div class="user_botom">
+                                            <img src="{{ $review->user->image ? asset('storage/'. $review->user->image) : asset('admin/assets/images/default-avatar.png') }}" alt="{{ $review->user->name }}">
+                                            <span> {{ $review->user->name }} </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <p>Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderite voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur excepteur sind occaecat
-                                        cupidatat non proident sunt culpa officia.
-                                    </p>
-                                    <div class="user_botom">
-                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
-                                        <span> Kenn Thomson <cite>Garden Owner</cite></span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <p>Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderite voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur excepteur sind occaecat
-                                        cupidatat non proident sunt culpa officia.
-                                    </p>
-                                    <div class="user_botom">
-                                        <img src="{{ asset('website/assets/images/user.png') }}" alt="img" />
-                                        <span> Kenn Thomson <cite>Garden Owner</cite></span>
-                                    </div>
-                                </div>
+                                @endforeach
+
+
+
                             </div>
                         </div>
                     </div>
@@ -383,6 +380,4 @@
         </div>
     </div>
     <!--End Testimonials -->
-
-    
 @endsection

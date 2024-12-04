@@ -15,9 +15,12 @@ use App\Http\Controllers\MyCommerceController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogReviewController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerOrderController;
+use App\Http\Controllers\CustomerReviewController;
+use App\Http\Controllers\ProductReviewController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SslCommerzPaymentController;
 
@@ -31,6 +34,15 @@ Route::get('/blog-detail/{id}', [MyCommerceController::class, 'blogDetail'])->na
 Route::get('/projects', [MyCommerceController::class, 'allProjects'])->name('all-projects');
 Route::get('/all-products', [MyCommerceController::class, 'allProducts'])->name('all-products');
 Route::get('/product-detail/{id}', [MyCommerceController::class, 'detail'])->name('product-detail');
+
+
+Route::post('/blog/{blogId}/reviews', [BlogReviewController::class, 'store'])->name('blog.reviews.store');
+Route::post('/product/{product}/reviews', [ProductReviewController::class, 'store'])->name('product.reviews.store');
+Route::get('/customer/review', [CustomerReviewController::class, 'reviewForm'])->name('customer.review');
+Route::post('/customer/review', [CustomerReviewController::class, 'submitReview'])->name('customer.review.submit');
+
+
+
 
 
 Route::get('/product-category/{id}', [MyCommerceController::class, 'category'])->name('product-category');
@@ -180,6 +192,22 @@ Route::middleware([
     Route::get('/admin/blog/edit/{id}', [BlogController::class,'edit'])->name('blog.edit');
     Route::post('/admin/blog/update/{id}', [BlogController::class,'update'])->name('blog.update');
     Route::get('/admin/blog/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
+
+    // reviews Route
+    Route::get('/admin/product-reviews', [ProductReviewController::class, 'index'])->name('product.reviews');
+    Route::patch('/admin/change-product-review-status/{id}', [ProductReviewController::class, 'changeReviewStatus'])->name('product.reviews.change-status');
+    Route::get('/admin/product-reviews/{id}', [ProductReviewController::class, 'deleteReview'])->name('product.reviews.delete');
+
+
+    Route::get('/admin/blog-reviews', [BlogReviewController::class, 'index'])->name('blog.reviews');
+    Route::patch('/admin/change-blog-review-status/{id}', [BlogReviewController::class, 'changeReviewStatus'])->name('blog.reviews.change-status');
+    Route::get('/admin/blog-reviews/{id}', [BlogReviewController::class, 'deleteReview'])->name('blog.reviews.delete');
+
+
+    Route::get('/admin/website-reviews', [CustomerReviewController::class, 'index'])->name('website.reviews');
+    Route::patch('/admin/change-website-review-status/{id}', [CustomerReviewController::class, 'changeReviewStatus'])->name('website.reviews.change-status');
+    Route::get('/admin/website-reviews/{id}', [CustomerReviewController::class, 'deleteReview'])->name('website.reviews.delete');
+
 
     //message Route
     Route::get('/admin/message', [ContactFormController::class,'index'])->name('message');

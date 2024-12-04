@@ -4,7 +4,46 @@
     Products
 @endsection
 
+@push('styles')
+    <style>
+        .stars {
+            display: flex;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .stars i {
+            font-size: 24px;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .stars i.selected {
+            color: #f39c12; /* Gold color for selected stars */
+        }
+
+        .rating-section {
+            margin-bottom: 15px;
+        }
+
+    </style>
+@endpush
+
 @section('body')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <!--Start Page Title-->
     <div class="page_title bg3">
         <div class="layer">
@@ -72,7 +111,7 @@
                                 <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab"
                                         href="#description">Description</a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#reviews">Reviews
-                                        (2)</a> </li>
+                                        ({{ count($reviews) }})</a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -85,80 +124,87 @@
                                 </div>
                                 <div id="reviews" class="tab-pane fade">
                                     <div class="product_review">
-                                        <h3>Reviews (2)</h3>
-                                        <div class="commant-text row">
-                                            <div class="col-lg-2 col-md-2 col-sm-4">
-                                                <div class="profile">
-                                                    <img class="img-responsive"
-                                                        src="{{ asset('website/assets/images/custom/insta.png') }}"
-                                                        alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                                <h5>David</h5>
-                                                <p><span class="c_date">March 2, 2021</span> | <span><a rel="nofollow"
-                                                            class="comment-reply-link" href="#">Reply</a></span></p>
-                                                <span class="rating">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                </span>
-                                                <p class="msg">ThisThis book is a treatise on the theory of ethics, very
-                                                    popular during the Renaissance. The first line of Lorem Ipsum,
-                                                    “Lorem ipsum dolor sit amet..
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="commant-text row">
-                                            <div class="col-lg-2 col-md-2 col-sm-4">
-                                                <div class="profile">
-                                                    <img class="img-responsive"
-                                                        src="{{ asset('website/assets/images/custom/insta5.png') }}"
-                                                        alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                                <h5>Jack</h5>
-                                                <p><span class="c_date">March 2, 2021</span> | <span><a rel="nofollow"
-                                                            class="comment-reply-link" href="#">Reply</a></span></p>
-                                                <span class="rating">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                </span>
-                                                <p class="msg">Nunc augue purus, posuere in accumsan sodales ac, euismod
-                                                    at est. Nunc faccumsan ermentum consectetur metus placerat mattis.
-                                                    Praesent mollis justo felis, accumsan faucibus mi maximus et. Nam
-                                                    hendrerit mauris id scelerisque placerat. Nam vitae imperdiet turpis
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="full review_bt_section">
-                                                    <div class="">
-                                                        <a class="theme-btn btn-style-two" data-bs-toggle="collapse"
-                                                            href="#collapseExample" role="button" aria-expanded="false"
-                                                            aria-controls="collapseExample">Leave a Review</a>
+                                        <h3>Reviews ({{ count($reviews) }})</h3>
+                                        @forelse ($reviews as $review)
+                                            <div class="commant-text row">
+                                                <div class="col-lg-2 col-md-2 col-sm-4">
+                                                    <div class="profile">
+                                                        <img class="img-responsive"
+                                                            src="{{ $review->user->image ? asset('storage/'. $review->user->image) : asset('admin/assets/images/default-avatar.png') }}"
+                                                            alt="{{ $review->user->name }}">
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                                    <h5>{{ $review->user->name }}</h5>
+                                                    <p><span class="c_date">{{ $review->created_at->format('F d, Y') }}</span></p>
+                                                    <span class="rating">
+                                                        @for ($i = 0; $i < $review->rating; $i++)
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                        @endfor
+                                                    </span>
+                                                    <p class="msg">
+                                                        {{ $review->review }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        @empty
+                                            <div class="commant-text row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <h5>No review found</h5>
+                                                </div>
+                                            </div>
+                                            
+                                        @endforelse
+
+                                        
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                @if (Session::get('customer_id'))
+                                                    <div class="full review_bt_section">
+                                                        <div class="">
+                                                            <a class="theme-btn btn-style-two" data-bs-toggle="collapse"
+                                                                href="#collapseExample" role="button"
+                                                                aria-expanded="false"
+                                                                aria-controls="collapseExample">Leave a Review</a>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="full review_bt_section">
+                                                        <div class="">
+                                                            <a class="theme-btn btn-style-two" href="{{ route('customer.login') }}">Login</a>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                                 <div class="full">
                                                     <div id="collapseExample" class="full collapse commant_box">
-                                                        <form accept-charset="UTF-8"
-                                                            action="http://www.shmai.com/preview/lawnexpress-html/index.html"
-                                                            method="post">
-                                                            <input id="ratings-hidden" name="rating" type="hidden">
-                                                            <textarea class="form-control animated" cols="50" id="new-review" name="comment"
+                                                        <form action="{{ route('product.reviews.store', $product->id) }}" method="post">
+                                                            @csrf
+                                                            <!-- Hidden Rating Input -->
+                                                            <input id="ratings-hidden" name="rating" type="hidden" required>
+                                                        
+                                                            <!-- Star Rating -->
+                                                            <div class="rating-section">
+                                                                <label>Rate this product:</label>
+                                                                <div class="stars">
+                                                                    <i class="fa fa-star" data-rating="1"></i>
+                                                                    <i class="fa fa-star" data-rating="2"></i>
+                                                                    <i class="fa fa-star" data-rating="3"></i>
+                                                                    <i class="fa fa-star" data-rating="4"></i>
+                                                                    <i class="fa fa-star" data-rating="5"></i>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <!-- Review Comment -->
+                                                            <textarea class="form-control animated" cols="50" id="new-review" name="review" 
                                                                 placeholder="Enter your review here..." required></textarea>
+                                                        
+                                                            <!-- Submit Button -->
                                                             <div class="full_bt center">
-                                                                <button class="theme-btn btn-style-two"
-                                                                    type="submit">Save</button>
+                                                                <button class="theme-btn btn-style-two" type="submit">Submit Review</button>
                                                             </div>
                                                         </form>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -210,3 +256,28 @@
     @endif
     <!-- end section -->
 @endsection
+
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.stars i');
+            const ratingInput = document.getElementById('ratings-hidden');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    ratingInput.value = index + 1;
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('selected');
+                        } else {
+                            s.classList.remove('selected');
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+@endpush

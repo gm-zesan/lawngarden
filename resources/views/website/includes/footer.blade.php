@@ -9,7 +9,7 @@
                         Magna aliqua ut enim minim veniam quis nostrud exercitation ullamco laboris nisi aliquip
                         <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <a href="contact.html" class="button brdr">get in touch</a>
+                    <a href="{{ route('contact') }}" class="button brdr">get in touch</a>
                 </div>
             </div>
         </div>
@@ -38,13 +38,12 @@
                     <div class="footer_widget">
                         <h5>Quick Links</h5>
                         <ul>
-                            <li><a href="index-2.html">Home Page</a></li>
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="services.html">Our Services</a></li>
-                            <li><a href="project_detail.html">The Projects</a></li>
-                            <li><a href="shop.html">Shop Online</a></li>
-                            <li><a href="blog.html">Our News</a></li>
-                            <li><a href="contact.html">Get in Touch</a></li>
+                            <li><a href="{{ route('home') }}">Home Page</a></li>
+                            <li><a href="{{ route('about') }}">About us</a></li>
+                            <li><a href="{{ route('all-projects') }}">The Projects</a></li>
+                            <li><a href="{{ route('all-products') }}">Store</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>

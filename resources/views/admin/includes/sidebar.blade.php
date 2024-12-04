@@ -96,6 +96,17 @@
                 </li>
                 <li> 
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="ti-layout-accordion-merged"></i>
+                        <span class="hide-menu">Review Module</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('product.reviews') }}">Product Review</a></li>
+                        <li><a href="{{ route('blog.reviews') }}">Blog Review</a></li>
+                        <li><a href="{{ route('website.reviews') }}">Website Review</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-email"></i>
                         <span class="hide-menu">Contact Modul</span>
                     </a>

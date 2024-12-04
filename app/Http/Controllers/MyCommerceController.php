@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogCategory;
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\WebsiteReview;
 use Illuminate\Http\Request;
 
 class MyCommerceController extends Controller
@@ -20,7 +20,8 @@ class MyCommerceController extends Controller
             'blogs' => Blog::with(['category', 'createdBy'])
                             ->orderBy('id', 'desc')
                             ->take(3)
-                            ->get()
+                            ->get(),
+            'reviews' => WebsiteReview::where('status', 1)->orderBy('id', 'desc')->get(),
         ]);
     }
 
@@ -57,7 +58,8 @@ class MyCommerceController extends Controller
     }
 
     public function detail($id) {
-        $product = Product::find($id);
+        $product = Product::with('reviews')->find($id);
+        $reviews = $product->reviews()->where('status', 1)->get();
         $product->hit_count += 1;
         $product->save();
 
@@ -69,6 +71,7 @@ class MyCommerceController extends Controller
     
         return view('website.products.details', [
             'product' => $product,
+            'reviews' => $reviews,
             'relatedProducts' => $relatedProducts
         ]);
     }
@@ -90,9 +93,10 @@ class MyCommerceController extends Controller
 
     public function blogDetail($id){
         $blog = Blog::find($id);
+        $reviews = $blog->reviews()->where('status', 1)->get();
         $latestBlogs = Blog::with('category', 'createdBy')->where('id', '!=', $id)->orderBy('id', 'desc')->take(3)->get();
         $blogCategories = BlogCategory::all();
-        return view('website.blog.detail', ['blog' => $blog, 'blogCategories' => $blogCategories, 'latestBlogs' => $latestBlogs]);
+        return view('website.blog.detail', ['blog' => $blog, 'reviews' => $reviews, 'blogCategories' => $blogCategories, 'latestBlogs' => $latestBlogs]);
     }
 
     public function categoryWiseBlogs($id){
