@@ -35,15 +35,7 @@
                                         <td>{{ $blog->title }}</td>
                                         <td>{{ $blog->category->name }}</td>
                                         <td>{{ $blog->subtitle }}</td>
-                                        <td>
-                                            @if($blog->image)
-                                                <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" height="50" width="80">
-                                            @else
-                                                N / A
-                                            @endif
-                                        </td>
-                                        
-                                        
+                                        <td><img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" height="50" width="80"></td>
                                         <td>{{ $blog->createdBy->name }}</td>
                                         <td>{{ $blog->created_at->diffForHumans() }}</td>
                                         <td>

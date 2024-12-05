@@ -24,4 +24,8 @@ class Customer extends Model
         self::$customer->save();
         return self::$customer;
     }
+
+    public function blogs(){
+        return $this->hasMany(Blog::class, 'created_by');
+    }
 }

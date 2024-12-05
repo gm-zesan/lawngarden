@@ -72,13 +72,7 @@
                                 style="display:none; color: blue; text-decoration: underline; font-size: 14px;"></p>
                             <p class="error" id="error"
                                 style="display:none; color: red; text-decoration: underline; font-size: 14px;"></p>
-                            <form action="http://www.shmai.com/preview/lawnexpress-html/process.php" method="post"
-                                id="newsletter_form">
-                                <input type="text" placeholder="Newsletter sign up" name="newletter_email"
-                                    id="newletter_email" />
-                                <input type="submit" id="subcribe" class="button" value="subscribe now"
-                                    name="subcribe">
-                            </form>
+                            <a href="{{ route('contact') }}" class="button" id="subscribe">Subscribe</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +84,7 @@
     <div class="container animated slide">
         <div class="row">
             <div class="col-sm-12 col-md-8">
-                <p>Copyrights 2024 <strong>LAWN EXPRESS</strong> • All Rights Reserved.</p>
+                <p>Copyrights &copy; 2024 • All Rights Reserved.</p>
             </div>
             <div class="col-md-4 col-sm-12 text-end">
                 <div class="social_icon">

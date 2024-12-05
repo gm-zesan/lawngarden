@@ -17,29 +17,38 @@ use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogReviewController;
 use App\Http\Controllers\CustomerAuthController;
+use App\Http\Controllers\CustomerBlogPostController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerOrderController;
 use App\Http\Controllers\CustomerReviewController;
 use App\Http\Controllers\ProductReviewController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SslCommerzPaymentController;
 
 
 
 Route::get('/', [MyCommerceController::class, 'index'])->name('home');
 Route::get('/about', [MyCommerceController::class, 'about'])->name('about');
-Route::get('/contact', [MyCommerceController::class, 'contact'])->name('contact');
 Route::get('/blog', [MyCommerceController::class, 'blog'])->name('blog');
 Route::get('/blog-detail/{id}', [MyCommerceController::class, 'blogDetail'])->name('blog-detail');
 Route::get('/projects', [MyCommerceController::class, 'allProjects'])->name('all-projects');
+Route::get('/project/details/{id}', [MyCommerceController::class, 'projectDetails'])->name('project.details');
 Route::get('/all-products', [MyCommerceController::class, 'allProducts'])->name('all-products');
 Route::get('/product-detail/{id}', [MyCommerceController::class, 'detail'])->name('product-detail');
+
+Route::get('/contact', [MyCommerceController::class, 'contact'])->name('contact');
+Route::post('/contact/store', [ContactFormController::class, 'store'])->name('contact.message.store');
+
+Route::get('/donation', [MyCommerceController::class, 'donation'])->name('donation');
+Route::post('/donation/store', [MyCommerceController::class, 'donationStore'])->name('donation.store');
+
 
 
 Route::post('/blog/{blogId}/reviews', [BlogReviewController::class, 'store'])->name('blog.reviews.store');
 Route::post('/product/{product}/reviews', [ProductReviewController::class, 'store'])->name('product.reviews.store');
 Route::get('/customer/review', [CustomerReviewController::class, 'reviewForm'])->name('customer.review');
-Route::post('/customer/review', [CustomerReviewController::class, 'submitReview'])->name('customer.review.submit');
+
 
 
 
@@ -47,7 +56,6 @@ Route::post('/customer/review', [CustomerReviewController::class, 'submitReview'
 
 Route::get('/product-category/{id}', [MyCommerceController::class, 'category'])->name('product-category');
 Route::get('/product-sub-category/{id}', [MyCommerceController::class, 'subCategory'])->name('product-sub-category');
-Route::post('/contact/store', [ContactFormController::class, 'store'])->name('contact.message.store');
 Route::get('/blog-detail/{id}', [MyCommerceController::class, 'blogDetail'])->name('blog-detail');
 Route::get('/category-wise-blogs/{id}', [MyCommerceController::class, 'categoryWiseBlogs'])->name('category-wise-blogs');
 
@@ -77,8 +85,15 @@ Route::middleware(['customer'])->group(function(){
     Route::get('/customer-profile', [CustomerAuthController::class, 'profile'])->name('customer.profile');
     Route::put('/customer-profile-update', [CustomerAuthController::class, 'update'])->name('customer.profile.update');
     Route::get('/customer-account', [CustomerAuthController::class, 'account'])->name('customer.account');
-    Route::get('/customer-order', [CustomerOrderController::class, 'allOrder'])->name('customer.order');
     Route::get('/customer-logout', [CustomerAuthController::class, 'logout'])->name('customer.logout');
+
+    
+    Route::get('/customer-order', [CustomerOrderController::class, 'allOrder'])->name('customer.order');
+    Route::post('/customer/review', [CustomerReviewController::class, 'submitReview'])->name('customer.review.submit');
+
+    Route::get('/customer-blog', [CustomerBlogPostController::class, 'index'])->name('customer.blog');
+    Route::get('/customer-blog-post', [CustomerBlogPostController::class, 'create'])->name('customer.blog-post');
+    Route::post('/customer-blog-post', [CustomerBlogPostController::class, 'store'])->name('customer.blog-post');
 });
 
 
@@ -193,20 +208,32 @@ Route::middleware([
     Route::post('/admin/blog/update/{id}', [BlogController::class,'update'])->name('blog.update');
     Route::get('/admin/blog/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
 
-    // reviews Route
+    // product reviews Route
     Route::get('/admin/product-reviews', [ProductReviewController::class, 'index'])->name('product.reviews');
     Route::patch('/admin/change-product-review-status/{id}', [ProductReviewController::class, 'changeReviewStatus'])->name('product.reviews.change-status');
     Route::get('/admin/product-reviews/{id}', [ProductReviewController::class, 'deleteReview'])->name('product.reviews.delete');
 
-
+    // blog reviews Route
     Route::get('/admin/blog-reviews', [BlogReviewController::class, 'index'])->name('blog.reviews');
     Route::patch('/admin/change-blog-review-status/{id}', [BlogReviewController::class, 'changeReviewStatus'])->name('blog.reviews.change-status');
     Route::get('/admin/blog-reviews/{id}', [BlogReviewController::class, 'deleteReview'])->name('blog.reviews.delete');
 
-
+    // website reviews Route
     Route::get('/admin/website-reviews', [CustomerReviewController::class, 'index'])->name('website.reviews');
     Route::patch('/admin/change-website-review-status/{id}', [CustomerReviewController::class, 'changeReviewStatus'])->name('website.reviews.change-status');
     Route::get('/admin/website-reviews/{id}', [CustomerReviewController::class, 'deleteReview'])->name('website.reviews.delete');
+
+    // project Route
+    Route::get('/admin/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('project.create');
+    Route::post('/admin/project/store', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/admin/project/show/{id}', [ProjectController::class, 'show'])->name('project.show');
+    Route::get('/admin/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::post('/admin/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::get('/admin/project/delete/{id}', [ProjectController::class, 'delete'])->name('project.delete');
+
+    // donation Route
+    Route::get('/admin/donations', [ProjectController::class, 'donations'])->name('donations');
 
 
     //message Route

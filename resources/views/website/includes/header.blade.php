@@ -7,7 +7,7 @@
                     <p><i class="fa fa-envelope"></i>gmzesan7767@gmail.com</p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-5 text-end">
-                    <a href="{{ route('contact') }}" class="top_btn">Donate Now</a>
+                    <a href="{{ route('donation') }}" class="top_btn">Donate Now</a>
                     <div class="social_icons">
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
