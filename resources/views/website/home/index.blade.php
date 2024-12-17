@@ -64,12 +64,10 @@
             <div class="heading_wrap animated fades">
                 <div class="icon_bar"></div>
                 <h2 class="heading_a">About <span>Lawn express</span></h2>
-                <h5 class="heading_small">Lorem ipsum dolor sit amet consectetur adipisicing elit sed ipsum eiusmod
-                    tempor <br />
-                    incididunt utsmat labore et dolore magna aliqua.
+                <h5 class="heading_small">Lorem ipsum dolor sit amet consectetur adipisicing elit sed ipsum eiusmod.
                 </h5>
             </div>
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-sm-12 col-md-3">
                     <div class="icon_box animated fades">
                         <img src="{{ asset('website/assets/images/icons/top_icon1.png') }}" alt="img" />
@@ -81,13 +79,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 content about_content animated fades">
-                    <p>Ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt sed laboret
-                        dolore magna aliquat enim ad minim veniam nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. </p>
-                    <p>Duis aute irure dolor reprehenderit voluptate velit esse cillum dolore fugiat nula pariatur.
-                        Excepteur sint occaecat cupidatat non proidentera sunt culpa officia deserunt mollit anim est
-                        laborum. Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium totam rem aperiam ipsa.</p>
+                    <p>Ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt sed laboret dolore magna aliquat enim ad minim veniam nostrud exercitation ullamco laboris nisi ut aliquip. </p>
                     <a href="#" class="button brdr">What we offers</a>
                 </div>
                 <div class="col-sm-12 col-md-3">
@@ -125,8 +117,7 @@
                                 </div>
                                 <div class="col-sm-10 col-md-10">
                                     <h3>Landscape Caring</h3>
-                                    <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation
-                                        ullamco laboris nisi aliquip eiusmod tempor incididunt labore.
+                                    <p>Abore et dolore magna aliqua ut enim minim veniam quis nostrud exercitation.
                                     </p>
 
                                 </div>

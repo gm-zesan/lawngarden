@@ -39,14 +39,16 @@
 
         <!-- Avatar -->
         <div class="text-center">
+            <small id="avatarError" class="text-danger"></small>
             <label for="avatar" class="form-label avatar-label">
-                @if($customer->image)
-                    <img src="{{ asset('storage/' . $customer->image) }}" alt="Avatar" class="rounded-full mb-2">
-                @else
-                    <img src="{{ asset('website/assets/images/default-avatar.png') }}" alt="Default Avatar" class="rounded-full mb-2">
-                @endif
+                <img id="avatarPreview" 
+                     src="{{ $customer->image ? asset('storage/' . $customer->image) : asset('frontend/img/avatar.jpg') }}" 
+                     alt="{{ $customer->name }}" 
+                     class="rounded-full mb-2" 
+                     style="height: 95%; border-radius: 50%;">
+                <i class="fas fa-camera"></i>
             </label>
-            <input type="file" id="avatar" name="image" class="form-control d-none">
+            <input type="file" id="avatar" name="image" class="form-control d-none" onchange="previewAvatar()">
         </div>
         <p class="mb-3 text-center">{{ $customer->email }}</p>
 
@@ -127,3 +129,37 @@
         </div>
     </form>
 @endsection
+
+@push('scripts')
+    <script>
+        function previewAvatar() {
+            const fileInput = document.getElementById('avatar');
+            const preview = document.getElementById('avatarPreview');
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+            const maxSize = 2 * 1024 * 1024;
+            const errorMessage = document.getElementById('avatarError');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                if (!allowedTypes.includes(file.type)) {
+                    errorMessage.textContent = 'Invalid file type. Please upload a JPG, JPEG, PNG, or GIF file.';
+                    fileInput.value = ''; 
+                    preview.src = "{{ $customer->image ? asset('storage/' . $customer->image) : asset('frontend/img/avatar.jpg') }}";
+                    return;
+                }
+                if (file.size > maxSize) {
+                    errorMessage.textContent = 'File size must be less than 2MB.';
+                    fileInput.value = '';
+                    preview.src = "{{ $customer->image ? asset('storage/' . $customer->image) : asset('frontend/img/avatar.jpg') }}";
+                    return;
+                }
+                errorMessage.textContent = '';
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+@endpush

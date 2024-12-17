@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('order_date');
             $table->string('order_timestamp');
             $table->float('order_total',10,2);
-            $table->float('tax_total',10,2);
+            $table->float('tax_total',10,2)->nullable();
             $table->float('shipping_total',10,2);
             $table->string('order_status')->default('pending');;
             $table->text('delivery_address');

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderDetail;
-use Session;
+use Illuminate\Support\Facades\Session;
 use ShoppingCart;
 
 class CheckoutController extends Controller

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class CustomerOrderController extends Controller
 {
