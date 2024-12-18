@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Customer;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 class CustomerBlogPostController extends Controller
 {
     public function index()

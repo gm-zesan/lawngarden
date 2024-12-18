@@ -43,8 +43,7 @@
                                             @endif
                                         </td>
                                         
-                                        
-                                        <td>{{ $blog->createdBy->name }}</td>
+                                        <td>{{ $blog->createdBy ? $blog->createdBy->name : 'Admin' }}</td>
                                         <td>{{ $blog->created_at->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('blog.show', ['id' => $blog->id]) }}"

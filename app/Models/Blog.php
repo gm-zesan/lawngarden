@@ -31,7 +31,7 @@ class Blog extends Model
         return $this->belongsTo(BlogCategory::class);
     }
     public function createdBy(){
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(Customer::class, 'created_by');
     }
 
 

@@ -48,7 +48,7 @@ class MyCommerceController extends Controller
         } else {
             $query->orderBy('created_at', 'desc');
         }
-        $products = $query->paginate(9);
+        $products = $query->paginate(12);
         return view('website.products.index',['products'=>$products]);
     }
 
@@ -132,14 +132,13 @@ class MyCommerceController extends Controller
     }
 
 
-
     public function about(){
         return view('website.about.index');
     }
 
     public function blog(){
-        $blogs = Blog::with('category', 'createdBy')->paginate(6);
-        $latestBlogs = Blog::with('category', 'createdBy')->orderBy('id', 'desc')->take(3)->get();
+        $blogs = Blog::with('category', 'createdBy')->paginate(5);
+        $latestBlogs = Blog::with('category', 'createdBy')->orderBy('id', 'desc')->take(5)->get();
         $blogCategories = BlogCategory::all();
         return view('website.blog.index', ['blogs' => $blogs, 'blogCategories' => $blogCategories, 'latestBlogs' => $latestBlogs]);
     }

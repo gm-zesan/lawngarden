@@ -33,8 +33,6 @@ class BlogController extends Controller
         if($request->file('image')){
             $data['image'] = Blog::getImageUrl($request);
         }
-        
-        $data['created_by'] = auth()->user()->id;
         Blog::create($data);
 
         return redirect()->route('blogs')->with('message','Blog created successfully.');

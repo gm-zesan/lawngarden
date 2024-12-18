@@ -135,7 +135,7 @@
                                     class="date">{{ $blog->created_at->format('d') }}<cite>{{ $blog->created_at->format('F') }}</cite></span>
                             </figure>
                             <div class="content">
-                                <h5>{{ $blog->createdBy->name }}</h5>
+                                <h5>{{ $blog->createdBy ? $blog->createdBy->name : 'Admin' }}</h5>
                                 <h3><a href="{{ route('blog-detail', ['id' => $blog->id]) }}">{{ $blog->title }}</a></h3>
                                 <p>
                                     {!! $blog->description !!}

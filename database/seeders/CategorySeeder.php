@@ -13,13 +13,11 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = array(
-            array('id' => '1','name' => 'Electronics','description' => 'electronics','created_at' => '2023-05-21 07:30:52','updated_at' => '2023-05-21 18:28:39'),
-            array('id' => '2','name' => 'Books','description' => 'books','created_at' => '2023-05-21 07:32:40','updated_at' => '2023-05-21 18:29:32'),
-            array('id' => '5','name' => 'House hold item','description' => 'house hold item','created_at' => '2023-05-21 18:39:39','updated_at' => '2023-05-21 18:39:39'),
-            array('id' => '6','name' => 'Test','description' => 'test','created_at' => '2023-05-21 18:40:10','updated_at' => '2023-05-21 18:40:10'),
-            array('id' => '7','name' => 'Man Fashion','description' => 'man fashion','created_at' => '2023-05-31 11:04:29','updated_at' => '2023-05-31 11:04:29'),
-            array('id' => '8','name' => 'Women Fashon','description' => 'women fashion','created_at' => '2023-05-31 11:05:01','updated_at' => '2023-05-31 11:05:01'),
-            array('id' => '9','name' => 'Gadget','description' => 'gadget','created_at' => '2023-05-31 11:06:32','updated_at' => '2023-05-31 11:06:32')
+            array('id' => '1','name' => 'Fruit Trees','description' => 'Trees that produce edible fruits.','created_at' => '2024-12-18 11:51:45','updated_at' => '2024-12-18 11:51:45'),
+            array('id' => '2','name' => 'Flowering Trees','description' => 'Trees known for their beautiful flowers.','created_at' => '2024-12-18 11:51:45','updated_at' => '2024-12-18 11:51:45'),
+            array('id' => '3','name' => 'Shade Trees','description' => 'Trees that provide ample shade.','created_at' => '2024-12-18 11:51:45','updated_at' => '2024-12-18 11:51:45'),
+            array('id' => '4','name' => 'Evergreen Trees','description' => 'Trees that stay green all year.','created_at' => '2024-12-18 11:51:45','updated_at' => '2024-12-18 11:51:45'),
+            array('id' => '5','name' => 'Deciduous Trees','description' => 'Trees that shed their leaves annually.','created_at' => '2024-12-18 11:51:45','updated_at' => '2024-12-18 11:51:45')
         );
 
         foreach ($categories as $category) {

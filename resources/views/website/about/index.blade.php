@@ -4,6 +4,17 @@
     About us
 @endsection
 
+@push('styles')
+    <style>
+        .team img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+    
+@endpush
+
 @section('body')
     <!--Start Page Title-->
     <div class="page_title bg3">
@@ -246,7 +257,7 @@
                 <div class="icon_bar"></div>
                 <h2 class="heading_a">the <span>experts team</span></h2>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-sm-6 col-md-3 animated fades res_mrg">
                     <div class="team">
                         <figure>
@@ -257,8 +268,8 @@
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                             </div>
                         </figure>
-                        <h5>Thomas Nick</h5>
-                        <span>gardner</span>
+                        <h5>G.M. Zesan</h5>
+                        <span>Developer</span>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3 animated fades res_mrg">
@@ -271,8 +282,8 @@
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                             </div>
                         </figure>
-                        <h5>Thomas Nick</h5>
-                        <span>gardner</span>
+                        <h5>Mainul Abedin Bhuiyan</h5>
+                        <span>Designer</span>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3 animated fades res_mrg">
@@ -285,24 +296,11 @@
                                 <a href="#"><i class="fa fa-pinterest"></i></a>
                             </div>
                         </figure>
-                        <h5>Thomas Nick</h5>
-                        <span>gardner</span>
+                        <h5>Riaj Ahamed</h5>
+                        <span>Designer</span>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 animated fades res_mrg">
-                    <div class="team">
-                        <figure>
-                            <img src="{{ asset('website/assets/images/custom/team4.jpg') }}" alt="img" />
-                            <div class="social_overlay">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </figure>
-                        <h5>Thomas Nick</h5>
-                        <span>gardner</span>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

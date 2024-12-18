@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,6 +17,7 @@ class DatabaseSeeder extends Seeder
             SubCategorySeeder::class,
             UnitSeeder::class,
             ProductSeeder::class,
+            ProjectSeeder::class,
             
             BlogCategorySeeder::class,
             BlogSeeder::class,
