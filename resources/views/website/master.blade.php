@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>@yield('title') || Lawn Garden</title>
+    <title>@yield('title') || TreeVerse</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

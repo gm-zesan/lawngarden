@@ -42,7 +42,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="contact_form  animated fades">
                         <h3 class="heading_c">Login <span>Form</span></h3>
-                        <p> Welcome back to Lawn Garden. Please login to your account.</p>
+                        <p> Welcome back to TreeVerse. Please login to your account.</p>
                         <p class="text-danger text-center">{{ Session('message') }}</p>
                         <form action="{{ route('customer.login') }}" method="POST">
                             @csrf
@@ -67,7 +67,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="contact_form  animated fades">
                         <h3 class="heading_c">Registration <span>Form</span></h3>
-                        <p>Welcome to Lawn Garden. Please register an account. </p>
+                        <p>Welcome to TreeVerse. Please register an account. </p>
                         <form action="{{ route('customer.register') }}" method="POST">
                             @csrf
                             <div class="col-sm-12 col-md-12">

@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
 
-    <title>Lawn Garden || Login</title>
+    <title>TreeVerse || Login</title>
 
     <link href="{{ asset('/admin') }}/dist/css/pages/login-register-lock.css" rel="stylesheet">
     <link href="{{ asset('/admin') }}/dist/css/style.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Lawn Garden</p>
+            <p class="loader__label">TreeVerse</p>
         </div>
     </div>
     <!-- ============================================================== -->

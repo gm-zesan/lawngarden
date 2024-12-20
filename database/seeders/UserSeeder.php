@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     {
         $users = array(
             array('id' => '1','name' => 'GM.Zesan','email' => 'gmzesan7767@gmail.com','avatar' => 'avatars/Ljf8yCZupoKRHgk9ZKCo1R143l7rpbnWeJBjH4oG.png','email_verified_at' => NULL,'password' => '$2y$10$cZqVyY692P1bRpAVKdiVvOC5i7oZoPpGkWsYTiPWxtB38YkNwccLe','two_factor_secret' => NULL,'two_factor_recovery_codes' => NULL,'two_factor_confirmed_at' => NULL,'remember_token' => 'ZeuCGlJNNmh8HiFbMB3NG4mWpmLxQfAvc60CsIrnTJYH67z700YIx71ilR9I','current_team_id' => NULL,'profile_photo_path' => NULL,'created_at' => '2023-04-25 18:55:52','updated_at' => '2024-10-14 09:01:40'),
-            array('id' => '2','name' => 'Lawn Garden','email' => 'lawngarden@gmail.com','avatar' => 'avatars/Ljf8yCZupoKRHgk9ZKCo1R143l7rpbnWeJBjH4oG.png','email_verified_at' => NULL,'password' => bcrypt('lawngarden24'),'two_factor_secret' => NULL,'two_factor_recovery_codes' => NULL,'two_factor_confirmed_at' => NULL,'remember_token' => 'ZeuCGlJNNmh8HiFbMB3NG4mWpmLxQfAvc60CsIrnTJYH67z700YIx71ilR9I','current_team_id' => NULL,'profile_photo_path' => NULL,'created_at' => '2023-04-25 18:55:52','updated_at' => '2024-10-14 09:01:40')
+            array('id' => '2','name' => 'TreeVerse','email' => 'lawngarden@gmail.com','avatar' => 'avatars/Ljf8yCZupoKRHgk9ZKCo1R143l7rpbnWeJBjH4oG.png','email_verified_at' => NULL,'password' => bcrypt('lawngarden24'),'two_factor_secret' => NULL,'two_factor_recovery_codes' => NULL,'two_factor_confirmed_at' => NULL,'remember_token' => 'ZeuCGlJNNmh8HiFbMB3NG4mWpmLxQfAvc60CsIrnTJYH67z700YIx71ilR9I','current_team_id' => NULL,'profile_photo_path' => NULL,'created_at' => '2023-04-25 18:55:52','updated_at' => '2024-10-14 09:01:40')
         );
 
         foreach ($users as $user) {

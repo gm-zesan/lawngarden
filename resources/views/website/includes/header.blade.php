@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-xl-3">
                     <div class="logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('website/assets/images/logo.png') }}" alt="img" /></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset('website/assets/images/logo.png') }}" alt="img" style="height: 120px"/></a>
                     </div>
                 </div>
                 <div class="col-sm-7 col-md-6 col-lg-6 text-end">
